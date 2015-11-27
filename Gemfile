@@ -23,6 +23,8 @@ gem 'paperclip'
 gem 's3_direct_upload'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
+gem 'gon'
+gem 'meta-tags'
 
 group :development, :test do
   gem 'certified'
