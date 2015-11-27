@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  pool: 5
+  username: nbsp
+  password:
+
+development:
+  <<: *default
+  database: feelthefuckingbern_development
+
+test:
+  <<: *default
+  database: feelthefuckingbern_test
+
+production:
+  <<: *default
+  database: feelthefuckingbern_production
