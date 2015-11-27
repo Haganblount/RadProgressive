@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 gem 'postoffice'
+gem 'devise'
 
 group :development, :test do
   gem 'spring'
