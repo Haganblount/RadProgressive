@@ -1,0 +1,3 @@
+.photo{ id: "background-#{background.id}", data: { id: background.id } }
+  = image_tag background.image.url(:thumb)
+  = link_to 'Remove', [:admin, background], method: :delete, remote: true, class: 'btn btn-danger'

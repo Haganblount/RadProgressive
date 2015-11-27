@@ -1,5 +1,6 @@
 /*
   *= require devise_bootstrap_views
+  *= require s3_direct_upload_progress_bars
   *= require_self
 */
 
@@ -7,3 +8,27 @@
 @import "bootswatch/yeti/variables";
 @import "bootstrap";
 @import "bootswatch/yeti/bootswatch";
+
+
+#s3-uploader {
+  .files {
+    .photo {
+      float: left; 
+      margin-left: 20px; 
+      margin-top: 20px;
+    }
+  }
+
+  .upload { 
+    margin-top: 20px; 
+
+    .progress .bar {
+      height: 20px;
+    }
+  }
+
+  .photo .btn { 
+    display: block;
+    border-radius: 0;
+  }
+}

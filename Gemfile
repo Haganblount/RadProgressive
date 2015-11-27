@@ -19,8 +19,14 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'responders'
 gem 'simple_form'
 gem 'devise-bootstrap-views'
+gem 'paperclip'
+gem 's3_direct_upload'
+gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
 
 group :development, :test do
+  gem 'certified'
+  gem 'dotenv-rails'
   gem 'letter_opener'
   gem 'spring'
 end
