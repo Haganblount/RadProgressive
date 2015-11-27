@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require libs/jquery.mb.bgndGallery/jquery.mb.bgndGallery
 #= require libs/jquery-backstretch
+#= require bootstrap/alert
 #= require_self
 
 $ ->
@@ -14,3 +15,5 @@ $ ->
       effect: 'zoom'
       shuffle: true
       images: gon.backgrounds
+
+      

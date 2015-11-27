@@ -1,0 +1,55 @@
+.panel 
+  = simple_form_for @card, wrapper: :clean_form do |f|
+    
+    %label Email address
+    .row
+      .col-xs-5
+        = f.input :email, input_html: { placeholder: 'Email Address' }
+      .col-xs-5
+        = f.input :email_confirmation, input_html: { placeholder: 'Confirm Email' }
+    .row
+      .col-xs-5
+        %label Billing address
+        = f.input :billing_first_name, input_html: { placeholder: 'First Name' }
+        = f.input :billing_last_name, input_html: { placeholder: 'Last Name' }
+        = f.input :billing_address_1, input_html: { placeholder: 'Address Line 1' }
+        = f.input :billing_address_2, input_html: { placeholder: 'Address Line 2' }
+        = f.input :billing_city, input_html: { placeholder: 'City' }
+        .row
+          .col-xs-2
+            = f.input :billing_state, input_html: { placeholder: 'ST' }
+          .col-xs-6
+            = f.input :billing_zip, input_html: { placeholder: 'ZIP Code' }
+      .col-xs-5
+        %label Shipping address
+        = f.input :shipping_first_name, input_html: { placeholder: 'First Name' }
+        = f.input :shipping_last_name, input_html: { placeholder: 'Last Name' }
+        = f.input :shipping_address_1, input_html: { placeholder: 'Address Line 1' }
+        = f.input :shipping_address_2, input_html: { placeholder: 'Address Line 2' }
+        = f.input :shipping_city, input_html: { placeholder: 'City' }
+        .row
+          .col-xs-2
+            = f.input :shipping_state, input_html: { placeholder: 'ST' }
+          .col-xs-6
+            = f.input :shipping_zip, input_html: { placeholder: 'ZIP Code' }
+
+    
+    %label.same-shiping.hidden
+      Shipping Same as billing 
+      %a.close{ data: { close: '.same-shiping' }, href: '#' } X
+    .row
+      .col-xs-5
+        = f.input :card_number, input_html: { placeholder: 'Card #' }
+      .col-xs-1
+        = f.input :card_month, input_html: { placeholder: 'M' }
+      .col-xs-1
+        = f.input :card_year, input_html: { placeholder: 'YR' }
+      .col-xs-2
+        = f.input :card_cvv, input_html: { placeholder: 'CVV' }
+    .form-actions
+      = f.submit 'Check out now', class: 'btn'
+    %p.note
+      Payments processed via Braintree Payments. FeelTheFuckingBern.com does not collect 
+      information from this transaction. FeelTheFuckingBern.com will never sell any information 
+      to third parties or attempt to reach you in any way other than the email you have provided us. 
+      All transactions are final. Please contact us at (575) 208-6572 if you have any questions.

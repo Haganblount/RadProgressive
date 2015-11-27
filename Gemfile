@@ -25,6 +25,8 @@ gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 gem 'gon'
 gem 'meta-tags'
+gem 'email_validator'
+gem 'credit_card_validations'
 
 group :development, :test do
   gem 'certified'

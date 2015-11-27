@@ -1,0 +1,108 @@
+form {
+  label { 
+    font-size: 19px;
+    font-family: liberator;
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+  
+  .form-group { margin-bottom: 8px; }
+
+  .btn { 
+    border-radius: 0;
+    background-color: black;
+    color: #fff;
+    font-family: liberator;
+    font-size: 18px;
+    padding: 5px 50px;
+    
+    &:hover, &:focus {
+      color: #eaeaea; 
+    }
+  }
+
+  .form-actions {
+    text-align: center;
+    margin-top: 10px; 
+  }
+
+  .form-control {
+    height: 34px;
+    padding: 12px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: none;
+    
+    font-size: 19px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 16.4px;
+
+    border-radius: 0;
+    
+    @include placeholder {
+      font-size: 19px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #cccccc;
+      font-style: normal;
+      font-weight: 100;
+      line-height: 16.4px;
+      height: 34px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+  }
+
+  .row {
+    .col-xs-5 { width: 39%; }
+    .col-xs-5:first-child { margin-right: 5px; }    
+    .col-xs-5 + .col-xs-5 { margin-left: 5px; }
+
+    .col-xs-2 { width: 16%; }
+    .col-xs-6 { width: 49.6%; }
+    .col-xs-2:first-child { margin-right: 1px; }    
+    .col-xs-2 + .col-xs-6 { margin-left: 1px; }
+
+    .col-xs-5 + .col-xs-1 { margin-left: 5px; }
+    .col-xs-1 { width: 6%; }
+    .col-xs-1 + .col-xs-2 { width: 10%; }
+    .col-xs-1 + .col-xs-1 { margin-left: 2px; }
+    .col-xs-1 + .col-xs-2 { margin-left: 2px; }
+  }
+}
+
+@media (max-width: 530px) {
+  label {
+    font-size: 15px !important;
+  }
+
+  form {
+    .row {
+      .col-xs-5 { width: 38%; }
+      .col-xs-5:first-child { margin-right: 3px; }    
+      .col-xs-5 + .col-xs-5 { margin-left: 3px; }
+
+
+      .col-xs-2 { width: 13%; }
+      .col-xs-6 { width: 44%; }
+      .col-xs-2:first-child { margin-right: 1px; }    
+      .col-xs-2 + .col-xs-6 { margin-left: 1px; }
+
+    .col-xs-5 + .col-xs-1 { margin-left: 3px; }
+    .col-xs-1 { width: 4.5%; }
+    .col-xs-1 + .col-xs-2 { width: 8%; }
+    .col-xs-1 + .col-xs-1 { margin-left: 1px; }
+    .col-xs-1 + .col-xs-2 { margin-left: 1px; }
+    }
+  }
+}
+
+a.close {
+  display: inline-block;
+  background: black;
+  width: 17px;
+  height: 15px; 
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 2px;
+}

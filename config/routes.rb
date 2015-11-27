@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'admin' => 'admin/users#index'
 
+  resource :cards
+
   namespace :admin do
     resources :users
 
