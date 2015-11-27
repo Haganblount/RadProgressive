@@ -8,22 +8,38 @@ form {
   
   .form-group { margin-bottom: 8px; }
 
-  .btn { 
-    border-radius: 0;
-    background-color: black;
-    color: #fff;
-    font-family: liberator;
-    font-size: 18px;
-    padding: 5px 50px;
-    
-    &:hover, &:focus {
-      color: #eaeaea; 
-    }
-  }
-
   .form-actions {
     text-align: center;
     margin-top: 10px; 
+  }
+
+  .form-group.has-error {
+    .form-control {
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+    }
+
+    .help-block { 
+      display: none;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      position: absolute;
+      margin-top: -13px;
+      right: -5px;
+      font-size: 13px;
+    }
+  }
+
+  .card_shipping_state, .card_billing_state, .card_card_cvv, .card_card_year, .card_card_month {
+    .help-block { 
+      display: none !important;
+    }
+  }
+
+  .form-group.has-error:hover {
+    .help-block { 
+      display: block;
+    }
   }
 
   .form-control {
@@ -51,48 +67,22 @@ form {
       padding-bottom: 2px;
     }
   }
-
-  .row {
-    .col-xs-5 { width: 39%; }
-    .col-xs-5:first-child { margin-right: 5px; }    
-    .col-xs-5 + .col-xs-5 { margin-left: 5px; }
-
-    .col-xs-2 { width: 16%; }
-    .col-xs-6 { width: 49.6%; }
-    .col-xs-2:first-child { margin-right: 1px; }    
-    .col-xs-2 + .col-xs-6 { margin-left: 1px; }
-
-    .col-xs-5 + .col-xs-1 { margin-left: 5px; }
-    .col-xs-1 { width: 6%; }
-    .col-xs-1 + .col-xs-2 { width: 10%; }
-    .col-xs-1 + .col-xs-1 { margin-left: 2px; }
-    .col-xs-1 + .col-xs-2 { margin-left: 2px; }
-  }
 }
 
-@media (max-width: 530px) {
-  label {
-    font-size: 15px !important;
-  }
-
-  form {
-    .row {
-      .col-xs-5 { width: 38%; }
-      .col-xs-5:first-child { margin-right: 3px; }    
-      .col-xs-5 + .col-xs-5 { margin-left: 3px; }
-
-
-      .col-xs-2 { width: 13%; }
-      .col-xs-6 { width: 44%; }
-      .col-xs-2:first-child { margin-right: 1px; }    
-      .col-xs-2 + .col-xs-6 { margin-left: 1px; }
-
-    .col-xs-5 + .col-xs-1 { margin-left: 3px; }
-    .col-xs-1 { width: 4.5%; }
-    .col-xs-1 + .col-xs-2 { width: 8%; }
-    .col-xs-1 + .col-xs-1 { margin-left: 1px; }
-    .col-xs-1 + .col-xs-2 { margin-left: 1px; }
-    }
+.btn { 
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0;
+  background-color: black;
+  color: #fff;
+  font-family: liberator;
+  font-size: 18px;
+  padding: 11px 50px;
+  
+  &:hover, &:focus {
+    cursor: pointer;
+    color: #eaeaea; 
   }
 }
 
@@ -105,4 +95,13 @@ a.close {
   text-align: center;
   font-size: 18px;
   padding-top: 2px;
+  text-decoration: none; 
 }
+
+@media (max-width: 530px) {
+  label {
+    font-size: 15px !important;
+  }
+}
+
+

@@ -22,6 +22,17 @@
     font-size: 10px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
+
+  p.note + p.note {
+    margin-top: 7px;
+  }
+
+  h1 { 
+    font-size: 43px;
+    font-family: liberator;
+    line-height: 1;
+    margin-top: 5px;
+  }
 }
 
 @media (max-width: 500px) {

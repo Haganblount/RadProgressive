@@ -1,0 +1,6 @@
+- if @card.new_record?
+  :plain
+    $('form').replaceWith("#{escape_javascript(render('form'))}");
+- else
+  :plain 
+    $('.panel').replaceWith("#{escape_javascript(render('done'))}");

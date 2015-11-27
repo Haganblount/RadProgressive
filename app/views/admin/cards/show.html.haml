@@ -1,0 +1,61 @@
+%legend Payment description.
+
+%dl.dl-horizontal
+  %dt Email:
+  %dd= @card.email
+  %dt Total Price:
+  %dd $#{@card.amount}
+  %dt Braintree ID:
+  %dd= @card.braintree_id
+  %dt Created at:
+  %dd= @card.created_at.strftime('%d-%m-%Y')
+
+.row
+  .col-xs-5
+    %legend Billing
+    %dl.dl-horizontal
+      %dt First name:
+      %dd= @card.billing_first_name
+      %dt Last name:
+      %dd= @card.billing_last_name
+      %dt Address 1:
+      %dd= @card.billing_address_1
+      %dt Address 1:
+      %dd= @card.billing_address_2
+      %dt City:
+      %dd= @card.billing_city
+      %dt State:
+      %dd= @card.billing_state
+      %dt ZIP Code:
+      %dd= @card.billing_zip
+  .col-xs-5
+    %legend Shipping
+    %dl.dl-horizontal
+      %dt First name:
+      %dd= @card.shipping_first_name
+      %dt Last name:
+      %dd= @card.shipping_last_name
+      %dt Address 1:
+      %dd= @card.shipping_address_1
+      %dt Address 1:
+      %dd= @card.shipping_address_2
+      %dt City:
+      %dd= @card.shipping_city
+      %dt State:
+      %dd= @card.shipping_state
+      %dt ZIP Code:
+      %dd= @card.shipping_zip
+
+- if @card.card_items.any?
+  %legend Shirts  
+  %table
+    %thead
+      %tr
+        %th Count
+        %th Size
+        %th Total price
+    %tbody
+      - @card.card_items.each do |card_item|
+        %th= card_item.count
+        %th= card_item.size
+        %th $#{card_item.price}

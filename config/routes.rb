@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  root 'cards#new'
+  root 'card_items#new'
 
   get 'admin' => 'admin/users#index'
 
-  resource :cards
+  resources :cards, only: [:new, :create] do
+    collection do
+      get 'done'
+    end
+  end
+  
+
+  resources :card_items
 
   namespace :admin do
     resources :users
+    
+    resources :cards, only: [:index, :show]
 
     resources :backgrounds do
       collection do

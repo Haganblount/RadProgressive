@@ -1,0 +1,29 @@
+%p 
+  New order /
+  = link_to 'Go to Admin panel', admin_card_url(@card)
+
+%ul
+  - @card.card_items.each do |card_item|
+    %li #{card_item.count} #{'shirt'.pluralize(card_item.count)} - $#{card_item.price}
+%hr
+%p
+  %b First name:
+  = @card.shipping_first_name
+  %br
+  %b Last name:
+  = @card.shipping_last_name
+  %br
+  %b Address 1:
+  = @card.shipping_address_1
+  %br
+  %b Address 1:
+  = @card.shipping_address_2
+  %br
+  %b City:
+  = @card.shipping_city
+  %br
+  %b State:
+  = @card.shipping_state
+  %br
+  %b ZIP Code:
+  = @card.shipping_zip

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127011951) do
+ActiveRecord::Schema.define(version: 20151129152344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,14 +28,16 @@ ActiveRecord::Schema.define(version: 20151127011951) do
 
   create_table "card_items", force: :cascade do |t|
     t.integer  "card_id"
-    t.integer  "count"
+    t.integer  "count",      default: 1
     t.string   "size"
     t.boolean  "paid",       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "session_id"
   end
 
   add_index "card_items", ["card_id"], name: "index_card_items_on_card_id", using: :btree
+  add_index "card_items", ["session_id"], name: "index_card_items_on_session_id", using: :btree
 
   create_table "cards", force: :cascade do |t|
     t.string   "email"
@@ -58,6 +60,16 @@ ActiveRecord::Schema.define(version: 20151127011951) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

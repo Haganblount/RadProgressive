@@ -1,0 +1,44 @@
+.cards {
+  form {
+    .row {
+      .col-xs-5 { width: 39%; }
+      .col-xs-5:first-child { margin-right: 5px; }    
+      .col-xs-5 + .col-xs-5 { margin-left: 5px; }
+
+      .col-xs-2 { width: 16%; }
+      .col-xs-6 { width: 49.6%; }
+      .col-xs-2:first-child { margin-right: 1px; }    
+      .col-xs-2 + .col-xs-6 { margin-left: 1px; }
+
+      .col-xs-5 + .col-xs-1 { margin-left: 5px; }
+      .col-xs-1 { width: 6%; }
+      .col-xs-1 + .col-xs-2 { width: 10%; }
+      .col-xs-1 + .col-xs-1 { margin-left: 2px; }
+      .col-xs-1 + .col-xs-2 { margin-left: 2px; }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .cards {
+    form {
+      .row {
+        .col-xs-5 { width: 38%; }
+        .col-xs-5:first-child { margin-right: 3px; }    
+        .col-xs-5 + .col-xs-5 { margin-left: 3px; }
+
+
+        .col-xs-2 { width: 13%; }
+        .col-xs-6 { width: 44%; }
+        .col-xs-2:first-child { margin-right: 1px; }    
+        .col-xs-2 + .col-xs-6 { margin-left: 1px; }
+
+      .col-xs-5 + .col-xs-1 { margin-left: 3px; }
+      .col-xs-1 { width: 4.5%; }
+      .col-xs-1 + .col-xs-2 { width: 8%; }
+      .col-xs-1 + .col-xs-1 { margin-left: 1px; }
+      .col-xs-1 + .col-xs-2 { margin-left: 1px; }
+      }
+    }
+  }
+}

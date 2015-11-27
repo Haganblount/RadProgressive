@@ -1,0 +1,5 @@
+:plain
+  $('#card-items').append("#{escape_javascript(render('form', card_item: @card_item))}");
+  $('form#new_card_item').replaceWith("#{escape_javascript(render('form', card_item: CardItem.new))}")
+  $('.select-box-it').selectBoxIt();
+  $('.go-to-cart-btn').replaceWith("#{escape_javascript(render('go_to_cart_btn'))}")

@@ -1,0 +1,18 @@
+%legend
+  %h2 
+    Payments
+  
+%table.table.table-hover
+  %thead
+    %tr
+      %th Email
+      %th Total Amount
+      %th Braintree ID
+      %th Shirts Count
+      %th Created At
+      %th 
+
+  %tbody
+    = render @cards
+
+= paginate @cards

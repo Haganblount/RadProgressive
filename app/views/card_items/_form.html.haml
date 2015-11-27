@@ -1,0 +1,28 @@
+- select_size_collection = card_item.new_record? ? SHIRT_SIZES - @card_items.map(&:size) : SHIRT_SIZES
+
+= simple_form_for card_item, wrapper: :clean_form, 
+                             remote: true, 
+                             html: { class: "card-item-form #{card_item.new_record? ? 'new' : 'edit'} #{(SHIRT_SIZES - @card_items.map(&:size)).empty? && card_item.new_record? ? 'hidden' : nil}" } do |f|
+  .row
+    .col-xs-2
+      
+      = f.input :size, as: :select, 
+                       collection: select_size_collection, 
+                       input_html: { class: "select-box-it #{card_item.new_record? && select_size_collection.count == 1 ? 'disabled' : nil}" }, 
+                       include_blank: false,
+                       disabled: card_item.persisted? ? true : false
+    .col-xs-2
+      = f.input :count, as: :select, 
+                        collection: (1..10), 
+                        input_html: { class: 'select-box-it' }, 
+                        include_blank: false,
+                        selected: card_item.count
+    .col-xs-4
+      .price-label
+        $
+        %span.price= card_item.price
+    .col-xs-2.item-actions
+      - if card_item.new_record?
+        %button.btn.cart-add-btn{ type: 'submit' }
+      - else
+        = link_to '', card_item, method: :delete, remote: true, class: "btn cart-check-btn"

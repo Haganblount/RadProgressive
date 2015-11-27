@@ -1,0 +1,7 @@
+%tr
+  %th= card.email
+  %th $#{card.total_price}
+  %th= card.braintree_id
+  %td= card.card_items.sum(:count)
+  %td= card.created_at.strftime('%d-%m-%Y')
+  %td= link_to 'SHOW', [:admin, card], class: 'btn btn-info'

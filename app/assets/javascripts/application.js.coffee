@@ -1,8 +1,15 @@
 #= require jquery
 #= require jquery_ujs
+#= require jquery-ui
+#= require "spin"
+#= require "ladda"
+#= require "ladda.jquery"
+#= require libs/jquery.transit
+#= require fancybox
 #= require libs/jquery.mb.bgndGallery/jquery.mb.bgndGallery
 #= require libs/jquery-backstretch
-#= require bootstrap/alert
+#= require libs/selectBoxIt
+#= require card_items
 #= require_self
 
 $ ->
@@ -16,4 +23,10 @@ $ ->
       shuffle: true
       images: gon.backgrounds
 
-      
+  $('.select-box-it').selectBoxIt();
+
+  $('a.fancybox').fancybox()
+
+  $(document).on 'click', 'a.close[data-close]', ->
+    $($(@).attr('data-close')).hide()
+    false

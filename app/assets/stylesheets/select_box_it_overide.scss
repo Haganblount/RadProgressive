@@ -1,0 +1,57 @@
+.selectboxit.form-control.selectboxit-btn {
+  height: 45px !important;
+  background-color: black;
+  border-radius: 0;
+}
+
+.selectboxit.form-control.selectboxit-btn.disabled {
+  opacity: 1;
+  pointer-events: none;
+  cursor: default;
+
+  .selectboxit-arrow {
+    display: none; 
+  }
+}
+
+.selectboxit-text {
+  height: 45px !important;
+  font-family: liberator;
+  color: #fff;
+  font-size: 40px;
+  padding-top: 10px;
+}
+
+.selectboxit-arrow.selectboxit-default-arrow {
+  border-top: 18px solid #fff;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+ul.selectboxit-options.selectboxit-list {
+  background-color: black;
+  border-radius: 0;
+}
+
+.selectboxit-option-icon-container { display: none !important; }
+
+.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
+  color: black !important;
+  background-color: #fff !important;
+  background-image: none !important;
+}
+
+
+li.selectboxit-selected { display: none; }
+
+li.selectboxit-option {
+  border-radius: 0;
+  background-color: black;
+
+  a.selectboxit-option-anchor {
+    padding: 2px 0;
+    color: #fff !important;
+    font-family: liberator;
+    font-size: 38px;
+  }
+}

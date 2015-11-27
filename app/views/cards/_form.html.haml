@@ -1,0 +1,55 @@
+= simple_form_for @card, wrapper: :clean_form, remote: true do |f|
+  %label Email address
+  .row
+    .col-xs-5
+      = f.input :email, input_html: { placeholder: 'Email Address' }
+    .col-xs-5
+      = f.input :email_confirmation, input_html: { placeholder: 'Confirm Email' }
+  .row
+    .col-xs-5
+      %label Billing address
+      = f.input :billing_first_name, input_html: { placeholder: 'First Name' }
+      = f.input :billing_last_name, input_html: { placeholder: 'Last Name' }
+      = f.input :billing_address_1, input_html: { placeholder: 'Address Line 1' }
+      = f.input :billing_address_2, input_html: { placeholder: 'Address Line 2' }
+      = f.input :billing_city, input_html: { placeholder: 'City' }
+      .row
+        .col-xs-2
+          = f.input :billing_state, input_html: { placeholder: 'ST' }
+        .col-xs-6
+          = f.input :billing_zip, input_html: { placeholder: 'ZIP Code' }
+    .col-xs-5
+      %label Shipping address
+      = f.input :shipping_first_name, input_html: { placeholder: 'First Name' }
+      = f.input :shipping_last_name, input_html: { placeholder: 'Last Name' }
+      = f.input :shipping_address_1, input_html: { placeholder: 'Address Line 1' }
+      = f.input :shipping_address_2, input_html: { placeholder: 'Address Line 2' }
+      = f.input :shipping_city, input_html: { placeholder: 'City' }
+      .row
+        .col-xs-2
+          = f.input :shipping_state, input_html: { placeholder: 'ST' }
+        .col-xs-6
+          = f.input :shipping_zip, input_html: { placeholder: 'ZIP Code' }
+  
+  - if @card.errors[:same_shiping].any?
+    %label.same-shiping
+      = @card.errors[:same_shiping].first
+      %a.close{ data: { close: '.same-shiping' }, href: '#' } X
+
+  .row
+    .col-xs-5
+      = f.input :card_number, input_html: { placeholder: 'Card #' }
+    .col-xs-1
+      = f.input :card_month, input_html: { placeholder: 'M' }
+    .col-xs-1
+      = f.input :card_year, input_html: { placeholder: 'YR' }
+    .col-xs-2
+      = f.input :card_cvv, as: :password, input_html: { placeholder: 'CVV' }
+  .form-actions
+    %button.btn.ladda-button{ 'data-style' => 'expand-right', type: :submit }
+      %span.ladda-label Check out now
+  
+  :javascript 
+    Ladda.bind('.ladda-button')
+
+

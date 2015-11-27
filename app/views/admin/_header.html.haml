@@ -12,6 +12,7 @@
         #example-nav-collapse.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
             = header_link 'Admin Users', admin_users_path if user_signed_in?
+            = header_link 'Cards', admin_cards_path if user_signed_in?
             = header_link 'Backgrounds', admin_backgrounds_path if user_signed_in?
         
             - if user_signed_in?

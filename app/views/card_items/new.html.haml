@@ -1,0 +1,14 @@
+.panel 
+  .wrapper
+    %h1 SHOW YOUR FUCKING SUPPORT WITH PRIDE
+    = render 'form', card_item: @card_item
+    #card-items
+      - @card_items.each do |card_item|
+        = render 'form', card_item: card_item
+    = render 'actions'
+    %p.note Unisex American Apparel Tri-Blend
+    %p.note  Union made in the U.S.A. - Union Shipped 
+    %p.note  
+      Proceeds go to 
+      = link_to 'BernieSanders.com', '#'
+      

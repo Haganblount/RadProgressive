@@ -1,5 +1,10 @@
 /*
   *= require libs/jquery.mb.bgndGallery/jquery.mb.bgndgallery.min
+  *= require jquery-ui
+  *= require libs/selectBoxIt
+  *= require fancybox
+  *= require ladda
+  *= require ladda-themed
   *= require_self
  */
 
@@ -8,13 +13,23 @@
 @import "bootstrap/mixins";
 @import "bootstrap/grid";
 @import "bootstrap/forms";
-@import "bootstrap/buttons";
 @import "mixins";
 @import "bootstrap_override";
+@import "select_box_it_overide";
+@import "fancybox_override";
 @import "background";
 @import "panel";
 @import "cards";
+@import "card_items";
 
-
-a { text-decoration: none; }
 .hidden { display: none; }
+a { color: black; }
+
+p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+p.done { 
+  text-align: center;
+}
+
+.ladda-button:hover { 
+  background-color: black !important;
+}

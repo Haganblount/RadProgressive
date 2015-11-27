@@ -27,6 +27,11 @@ gem 'gon'
 gem 'meta-tags'
 gem 'email_validator'
 gem 'credit_card_validations'
+gem 'jquery-ui-rails'
+gem 'fancybox-rails'
+gem 'activerecord-session_store'
+gem "ladda-rails"
+gem 'braintree'
 
 group :development, :test do
   gem 'certified'
