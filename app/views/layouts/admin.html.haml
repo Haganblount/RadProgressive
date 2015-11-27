@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FeelTheFuckingBern Admin
+    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
+    = javascript_include_tag 'admin', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    
+  %body.admin{ class: "#{yield(:body_classes)} #{controller_name}" }
+    = render 'admin/header'  
+    .container-fluid
+      .row
+        .col-md-12
+          = bootstrap_flash
+          = yield
+

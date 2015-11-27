@@ -1,0 +1,15 @@
+%legend
+  %h2 
+    Admin Users
+    = link_to '+', new_admin_user_path, class: 'btn pull-right btn-primary'
+%table.table.table-hover
+  %thead
+    %tr
+      %th Email
+      %th Created At
+      %th 
+
+  %tbody
+    = render @users
+
+= paginate @users

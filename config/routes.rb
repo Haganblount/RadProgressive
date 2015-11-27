@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users
   
+  get 'admin' => 'admin/users#index'
+
+  namespace :admin do
+    resources :users
+
+    resources :backgrounds do
+      collection do
+        post 'positions'
+      end
+    end
+  end
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

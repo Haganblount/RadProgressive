@@ -18,6 +18,7 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'responders'
 gem 'simple_form'
+gem 'devise-bootstrap-views'
 
 group :development, :test do
   gem 'letter_opener'

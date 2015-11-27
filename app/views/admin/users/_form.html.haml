@@ -1,0 +1,6 @@
+= simple_form_for [:admin, @user] do |f|
+  = link_to 'Back', admin_users_path, class: 'btn btn-primary'
+  %hr
+  = f.input :email
+  = f.input :password
+  = f.submit 'Save', class: 'btn btn-success'
