@@ -10,7 +10,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'unicorn'
 gem 'postoffice'
 gem 'devise'
 gem 'haml-rails'
@@ -33,7 +32,10 @@ gem 'activerecord-session_store'
 gem "ladda-rails"
 gem 'braintree'
 gem 'airbrake'
-gem 'unicorn-rails'
+
+group :production do
+  gem "puma"
+end
 
 group :development, :test do
   gem 'certified'
