@@ -33,3 +33,12 @@ p.done {
 .ladda-button:hover { 
   background-color: black !important;
 }
+
+.ladda-spinner {
+  &:focus, &:hover, &:active {
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    display: inline-block !important;
+  }
+}

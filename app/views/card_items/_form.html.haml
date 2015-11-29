@@ -23,6 +23,9 @@
         %span.price= card_item.price
     .col-xs-2.item-actions
       - if card_item.new_record?
-        %button.btn.cart-add-btn{ type: 'submit' }
+        %button.btn.cart-add-btn{ type: :submit }
       - else
         = link_to '', card_item, method: :delete, remote: true, class: "btn cart-check-btn"
+
+  :javascript 
+    Ladda.bind('.ladda-button')

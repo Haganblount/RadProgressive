@@ -34,6 +34,7 @@ gem 'activerecord-session_store'
 gem "ladda-rails"
 gem 'braintree'
 gem 'airbrake'
+gem "historyjs-rails"
 
 group :production do
   gem 'fog', '~>1.20'

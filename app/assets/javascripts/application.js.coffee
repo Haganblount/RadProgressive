@@ -10,6 +10,7 @@
 #= require libs/jquery-backstretch
 #= require libs/selectBoxIt
 #= require card_items
+#= require history_native.min
 #= require_self
 
 $ ->
