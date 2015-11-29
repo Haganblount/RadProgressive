@@ -32,6 +32,7 @@ gem 'fancybox-rails'
 gem 'activerecord-session_store'
 gem "ladda-rails"
 gem 'braintree'
+gem 'airbrake'
 
 group :development, :test do
   gem 'certified'
