@@ -1,4 +1,4 @@
-- if @card_items.sum(:count) > 0
+- if @card_items.any? && @card_items.sum(:count) > 0 
   = link_to card_items_path, remote: true, class: 'btn has-cart-items go-to-cart-btn' do
     Go to Cart
     %span.card-items-count (#{@card_items.sum(:count)})

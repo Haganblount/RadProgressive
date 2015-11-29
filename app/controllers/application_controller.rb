@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   
   def set_session
     @session = Session.find_by_session_id(session.id)
-    @card_items = @session.card_items.without_card
+    @card_items = @session.try(:card_items).try(:without_card) || []
   end
 
   def set_gon
