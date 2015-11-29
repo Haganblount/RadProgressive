@@ -53,6 +53,11 @@ GEM
     autoprefixer-rails (6.1.0.1)
       execjs
       json
+    aws-sdk (1.64.0)
+      aws-sdk-v1 (= 1.64.0)
+    aws-sdk-v1 (1.64.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
@@ -357,6 +362,7 @@ DEPENDENCIES
   activerecord-session_store
   airbrake
   asset_sync
+  aws-sdk (< 2.0)
   bootstrap-sass (~> 3.3.1)
   bootswatch-rails
   braintree
