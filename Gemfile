@@ -35,6 +35,8 @@ gem 'braintree'
 gem 'airbrake'
 
 group :production do
+  gem 'fog', '~>1.20'
+  gem 'asset_sync'
   gem 'unicorn'
   gem 'rails_12factor'
 end
