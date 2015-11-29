@@ -34,7 +34,7 @@ gem 'braintree'
 gem 'airbrake'
 
 group :production do
-  gem "puma"
+  gem 'unicorn'
 end
 
 group :development, :test do
