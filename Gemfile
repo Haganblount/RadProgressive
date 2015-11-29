@@ -33,6 +33,7 @@ gem 'activerecord-session_store'
 gem "ladda-rails"
 gem 'braintree'
 gem 'airbrake'
+gem 'unicorn-rails'
 
 group :development, :test do
   gem 'certified'
