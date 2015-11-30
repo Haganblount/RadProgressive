@@ -1,7 +1,7 @@
 %p You just fucking ordered the shirts below:
 %ul
   - @card.card_items.each do |card_item|
-    %li #{card_item.count} #{'shirt'.pluralize(card_item.count)} - $#{card_item.price}
+    %li #{card_item.count} #{'shirt'.pluralize(card_item.count)}((#{card_item.color})) - $#{card_item.price}
 
 %p It's being shipped to your bitch-ass at:
 %p

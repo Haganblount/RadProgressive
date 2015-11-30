@@ -4,7 +4,7 @@
 
 %ul
   - @card.card_items.each do |card_item|
-    %li #{card_item.count} #{'shirt'.pluralize(card_item.count)} - $#{card_item.price}
+    %li #{card_item.count} #{'shirt'.pluralize(card_item.count)}(#{card_item.color}) - $#{card_item.price}
 %hr
 %p
   %b First name:

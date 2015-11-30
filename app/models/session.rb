@@ -8,6 +8,10 @@ class Session < ActiveRecord::SessionStore::Session
     where(session_id: session_id).first
   end 
 
+  def price
+    card_items.sum(:count) * SHIRT_PRICE
+  end
+
   def total_price
     card_items.sum(:count) * SHIRT_PRICE + SHIPPING_PRICE
   end

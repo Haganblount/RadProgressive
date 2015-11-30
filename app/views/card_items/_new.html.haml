@@ -1,0 +1,34 @@
+.panel 
+  .wrapper
+    %h1 SHOW YOUR FUCKING SUPPORT WITH PRIDE
+    = render 'form', card_item: @card_item
+    #card-items
+      - @card_items.each do |card_item|
+        = render 'form', card_item: card_item
+    = render 'actions'
+    %p.note Unisex American Apparel Tri-Blend
+    %p.note  Union made in the U.S.A. - Union Shipped 
+    %p.note  
+      Proceeds go to 
+      = link_to 'BernieSanders.com', '#'
+      
+:javascript
+  $('.select-box-it').selectBoxIt();
+
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  } else {
+    $('a.fancybox').fancybox()
+  }
+  
+
+  $(document).on('change', '.card-item-form.edit select', function(){
+    $(this).parents('form').trigger('submit')
+  });
+
+  $(document).on('change', '#card_item_count', function(){
+    var form = $(this).parents('form')
+    form.find('.price-label .price').text(gon.shirt_price * $(this).val())
+  });
+
+    
+    

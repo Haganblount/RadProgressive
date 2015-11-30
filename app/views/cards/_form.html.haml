@@ -8,16 +8,16 @@
   .row
     .col-xs-5
       %label Billing address
-      = f.input :billing_first_name, input_html: { placeholder: 'First Name' }
-      = f.input :billing_last_name, input_html: { placeholder: 'Last Name' }
-      = f.input :billing_address_1, input_html: { placeholder: 'Address Line 1' }
-      = f.input :billing_address_2, input_html: { placeholder: 'Address Line 2' }
-      = f.input :billing_city, input_html: { placeholder: 'City' }
+      = f.input :billing_first_name, input_html: { placeholder: 'First Name', "sync-with" => '#card_shipping_first_name' }
+      = f.input :billing_last_name, input_html: { placeholder: 'Last Name', "sync-with" => '#card_shipping_last_name' }
+      = f.input :billing_address_1, input_html: { placeholder: 'Address Line 1', "sync-with" => '#card_shipping_address_1' }
+      = f.input :billing_address_2, input_html: { placeholder: 'Address Line 2', "sync-with" => '#card_shipping_address_2' }
+      = f.input :billing_city, input_html: { placeholder: 'City', "sync-with" => '#card_shipping_city' }
       .row
         .col-xs-2
-          = f.input :billing_state, input_html: { placeholder: 'ST' }
+          = f.input :billing_state, input_html: { placeholder: 'ST', "sync-with" => '#card_shipping_state' }
         .col-xs-6
-          = f.input :billing_zip, input_html: { placeholder: 'ZIP Code' }
+          = f.input :billing_zip, input_html: { placeholder: 'ZIP Code', "sync-with" => '#card_shipping_zip' }
     .col-xs-5
       %label Shipping address
       = f.input :shipping_first_name, input_html: { placeholder: 'First Name' }
@@ -45,9 +45,21 @@
       = f.input :card_year, input_html: { placeholder: 'YR' }
     .col-xs-2
       = f.input :card_cvv, as: :password, input_html: { placeholder: 'CVV' }
-  .form-actions
-    %button.btn.ladda-button{ 'data-style' => 'expand-right', type: :submit }
-      Check out now
+  
+  .row.prices
+    .col-xs-3
+      Shirts: $#{@session.price}
+    .col-xs-3
+      Shipping: $#{SHIPPING_PRICE}
+    .col-xs-3
+      Total: $#{@session.total_price}
+
+  .row.form-actions
+    .col-xs-5
+      = link_to 'Back to cart', new_card_item_path, class: 'btn', remote: true
+    .col-xs-5
+      %button.btn.ladda-button{ 'data-style' => 'expand-right', type: :submit }
+        Check out now
   
   :javascript 
     Ladda.bind('.ladda-button')

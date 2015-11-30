@@ -16,13 +16,45 @@
       .col-xs-1 + .col-xs-1 { margin-left: 2px; }
       .col-xs-1 + .col-xs-2 { margin-left: 2px; }
     }
+
+    .row.prices {
+      padding: 10px;
+      font-family: liberator;
+    }
+
+    .form-actions {
+      text-align: left;
+
+      .col-xs-5 { 
+        width: 48.5%; 
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .col-xs-5 + .col-xs-5 { 
+        width: 45%;
+        padding-left: 0; 
+        margin-left: 2px;
+      }
+
+      a.btn {
+        padding-right: 36px;
+        padding-left: 36px;
+      }
+
+      button.btn {
+        padding-left: 30px;
+        padding-right: 30px;
+        background-image: image-url('flag-btn.png');
+      }
+    }
   }
 }
 
 @media (max-width: 530px) {
   .cards {
     form {
-      .row {
+      .row:not(.form-actions) {
         .col-xs-5 { width: 38%; }
         .col-xs-5:first-child { margin-right: 3px; }    
         .col-xs-5 + .col-xs-5 { margin-left: 3px; }
@@ -33,11 +65,27 @@
         .col-xs-2:first-child { margin-right: 1px; }    
         .col-xs-2 + .col-xs-6 { margin-left: 1px; }
 
-      .col-xs-5 + .col-xs-1 { margin-left: 3px; }
-      .col-xs-1 { width: 4.5%; }
-      .col-xs-1 + .col-xs-2 { width: 8%; }
-      .col-xs-1 + .col-xs-1 { margin-left: 1px; }
-      .col-xs-1 + .col-xs-2 { margin-left: 1px; }
+        .col-xs-5 + .col-xs-1 { margin-left: 3px; }
+        .col-xs-1 { width: 4.5%; }
+        .col-xs-1 + .col-xs-2 { width: 8%; }
+        .col-xs-1 + .col-xs-1 { margin-left: 1px; }
+        .col-xs-1 + .col-xs-2 { margin-left: 1px; }
+      }
+
+      .row.form-actions {
+        .btn { font-size: 16px; }
+        
+        .col-xs-5 + .col-xs-5 { margin-left: 4px; }
+
+        a.btn { 
+          padding-right: 24px;
+          padding-left: 24px;
+        }
+
+        button.btn {
+          padding-left: 17px;
+          padding-right: 17px;
+        }
       }
     }
   }

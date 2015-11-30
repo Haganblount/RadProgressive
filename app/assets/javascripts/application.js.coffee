@@ -9,7 +9,6 @@
 #= require libs/jquery.mb.bgndGallery/jquery.mb.bgndGallery
 #= require libs/jquery-backstretch
 #= require libs/selectBoxIt
-#= require card_items
 #= require history_native.min
 #= require libs/jquery-labelauty
 #= require_self
@@ -25,12 +24,12 @@ $ ->
       shuffle: true
       images: gon.backgrounds
 
-  $('.select-box-it').selectBoxIt();
 
-  $('a.fancybox').fancybox()
+  $(document).on 'change', '#new_card input[sync-with]', ->
+    syncEl = $($(@).attr('sync-with'))
 
-  $(document).on 'click', 'a.close[data-close]', ->
-    $($(@).attr('data-close')).hide()
-    false
+    if syncEl != undefined
+      if syncEl.val() == null || syncEl.val() == ''
+        $($(@).attr('sync-with')).val($(@).val())
 
-  
+

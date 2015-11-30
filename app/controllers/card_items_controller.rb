@@ -8,7 +8,7 @@ class CardItemsController < ApplicationController
 
   def create
     @card_item = @session.card_items.build(card_item_params)
-    @card_item.color = (card_item_params[:is_black] == 1 ? :black : :grey)
+    @card_item.color = (card_item_params[:is_black] == '1' ? :black : :grey)
     @card_item.save
   end
 

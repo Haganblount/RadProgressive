@@ -33,7 +33,6 @@ class Card < ActiveRecord::Base
   validates :card_cvv, presence: true, numericality: true, length: { is: 3 }
 
   after_validation :set_card_number_errors
-  before_validation :compare_shipping_and_billing
 
   def total_price
     card_items.sum(:count) * SHIRT_PRICE + SHIPPING_PRICE
@@ -45,26 +44,6 @@ class Card < ActiveRecord::Base
     errors.add(:card_number, "Card year #{errors[:card_year].first}") if errors[:card_year].any?
     errors.add(:card_number, "Card month #{errors[:card_month].first}") if errors[:card_month].any?
     errors.add(:card_number, "CVV #{errors[:card_cvv].first}") if errors[:card_cvv].any?
-  end
-  
-  def compare_shipping_and_billing
-    if billing_first_name.present? && shipping_first_name.present? &&
-       billing_last_name.present? && shipping_last_name.present? &&
-       billing_address_1.present? && shipping_address_1.present? &&
-       billing_city.present? && shipping_city.present? &&
-       billing_state.present? && billing_state.present? &&
-       billing_zip.present? && billing_zip.present?
-      
-      if billing_first_name == shipping_first_name &&
-         billing_last_name == shipping_last_name &&
-         billing_address_1 == shipping_address_1 &&
-         billing_city == shipping_city &&
-         billing_state == shipping_state && 
-         billing_zip == shipping_zip
-
-         errors.add(:same_shiping, "Shipping Same as billing")
-      end
-    end
   end
 end
 

@@ -7,7 +7,7 @@
     .col-xs-1
       .form-group 
         = f.check_box :is_black, class: card_item.new_record? ? "checkbox-new" : "checkbox-#{card_item.id}",
-                                 checked: card_item.color.black?
+                                 checked: card_item.color.black?, disabled: card_item.persisted?
 
     .col-xs-2
       
@@ -34,4 +34,4 @@
 
   :javascript 
     Ladda.bind('.ladda-button')
-    $(".checkbox-new, .checkbox-#{card_item.id}").not('.labelauty').labelauty()
+    $(".checkbox-new, .checkbox-#{card_item.id}").not('.labelauty').labelauty({force_random_id: true})
