@@ -5,6 +5,7 @@
   *= require fancybox
   *= require ladda
   *= require ladda-themed
+  *= require libs/jquery-labelauty
   *= require_self
  */
 
@@ -17,6 +18,7 @@
 @import "bootstrap_override";
 @import "select_box_it_overide";
 @import "fancybox_override";
+@import "checkbox_override";
 @import "background";
 @import "panel";
 @import "cards";

@@ -11,6 +11,7 @@
 #= require libs/selectBoxIt
 #= require card_items
 #= require history_native.min
+#= require libs/jquery-labelauty
 #= require_self
 
 $ ->
@@ -31,3 +32,5 @@ $ ->
   $(document).on 'click', 'a.close[data-close]', ->
     $($(@).attr('data-close')).hide()
     false
+
+  

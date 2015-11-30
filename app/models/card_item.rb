@@ -1,4 +1,10 @@
 class CardItem < ActiveRecord::Base
+  extend Enumerize
+
+  attr_accessor :is_black
+
+  enumerize :color, in: [:grey, :black], default: :grey
+
   belongs_to :card
   belongs_to :session
 

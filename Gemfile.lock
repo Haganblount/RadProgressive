@@ -95,6 +95,8 @@ GEM
       dotenv (= 2.0.1)
     email_validator (1.6.0)
       activemodel
+    enumerize (1.0.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     excon (0.45.3)
     execjs (2.6.0)
@@ -375,6 +377,7 @@ DEPENDENCIES
   devise-bootstrap-views
   dotenv-rails
   email_validator
+  enumerize
   fancybox-rails
   fog (~> 1.20)
   gon

@@ -35,6 +35,8 @@ gem "ladda-rails"
 gem 'braintree'
 gem 'airbrake'
 gem "historyjs-rails"
+gem 'enumerize'
+
 
 group :production do
   gem 'fog', '~>1.20'

@@ -1,0 +1,40 @@
+label[for="card_item_is_black"] {
+  border-radius: 0 !important;
+  height: 45px !important;
+  width: 55px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.labelauty-checked, .labelauty-unchecked { display: none !important; }
+
+input.labelauty:checked + label {
+  background-color: black;  
+}
+
+.labelauty-checked-image, .labelauty-unchecked-image {
+  border: 2px solid black !important;
+  background-position-x: 50% !important;
+  height: 41px !important;
+  width: 55px !important;
+}
+
+.labelauty-checked-image {
+  background-color: #eaeaea !important;
+  background-image: image-url('color-black.png') !important;
+}
+
+.labelauty-unchecked-image {
+  background-color: black !important;  
+  background-image: image-url('color-grey.png') !important;
+}
+
+@media (max-width: 370px) {
+  label[for="card_item_is_black"] {
+    width: 50px !important;
+  }
+
+  .labelauty-checked-image, .labelauty-unchecked-image {
+    width: 50px !important;
+  }
+}

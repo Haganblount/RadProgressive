@@ -53,27 +53,34 @@
       height: 36px;
       font-family: liberator;
       color: #fff;
-      font-size: 40px;
+      font-size: 36px;
       background-color: black;
       text-align: right;
       padding-top: 9px;
       padding-right: 10px;
     }
 
-    .selectboxit.select.required.select-box-it { width: 65px !important; }
-    .selectboxit-options.selectboxit-list { min-width: 65px !important; }
+    #card_item_countSelectBoxIt, #card_item_countSelectBoxItOptions {
+      width: 60px !important;
+      min-width: 60px !important;
+    }
+
+    .selectboxit-btn { width: 70px !important; }
+    .selectboxit.select.required.select-box-it { width: 70px !important; }
+    .selectboxit-options.selectboxit-list { min-width: 70px !important; }
   }
 
   .item-actions {
+    width: 13%;
     button.btn, a.btn {
       height: 45px;
-      width: 65px;
+      width: 50px;
       border: none;
       padding: 0;
 
       &.cart-check-btn, &.cart-add-btn, &.cart-remove-btn {
         background-repeat: no-repeat;
-        background-position: 40% 50%;
+        background-position: 30% 50%;
       }
 
       &.cart-add-btn { background-image: image-url('cart-add-btn.png'); }
@@ -83,7 +90,7 @@
         
         &:hover {
           height: 41px;
-          width: 61px;
+          width: 46px;
           border: 2px inset black;
           background-color: #fff;
           background-image: image-url('cart-remove-btn.png');
@@ -93,8 +100,23 @@
   }
 
   .row {
+    .col-xs-1:first-child { margin-right: 2px; }
+    
     .col-xs-4, .col-xs-2 { 
       padding-right: 0;
+    }
+
+    .col-xs-2 + .col-xs-1 {
+      padding-left: 10px;
+    }
+
+    .col-xs-1 + .col-xs-3 {
+      padding-left: 17px;
+      padding-right: 5px;
+    }
+
+    .col-xs-3 + .col-xs-2 {
+      padding-left: 0;
     }
 
     .col-xs-4 { width: 30%; }
@@ -151,6 +173,31 @@
         font-size: 30px; 
         height: 32px;
         padding-top: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .card_items {
+    .row {
+      .col-xs-1:first-child { 
+        padding-left: 0; 
+        margin-right: 5px;
+      }
+
+      .col-xs-2 + .col-xs-1 {
+        padding-right: 18px;
+      }
+
+      .col-xs-3.price-col { 
+        width: 27%;
+        padding-right: 1px;
+      }
+
+      .col-xs-1 + .col-xs-2 { 
+        padding-right: 1px; 
+        padding-left: 10px;
       }
     }
   }
