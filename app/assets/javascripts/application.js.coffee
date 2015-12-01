@@ -29,6 +29,11 @@ $ ->
   else 
     window.transitionParams = { opacity: 0 }
   
+ $(document).on 'input', '.form-group.has-error input', ->
+  formGroupEl = $(@).parents('.form-group')
+  formGroupEl.find('.help-block').addClass('hidden')
+  formGroupEl.removeClass('has-error')
+
   $(document).on 'change', '#new_card input[sync-with]', ->
     syncEl = $($(@).attr('sync-with'))
 

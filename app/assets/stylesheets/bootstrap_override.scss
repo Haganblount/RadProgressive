@@ -15,17 +15,18 @@ form {
 
   .form-group.has-error {
     .form-control {
-      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+      height: 33px;
+      border-top: 1px solid #ce8483;
     }
 
     .help-block { 
+      pointer-events: none;
       margin-top: 5px;
       margin-bottom: 10px;
       position: absolute;
       margin-top: -13px;
       right: -5px;
-      font-size: 13px;
+      font-size: 12px;
     }
   }
 
