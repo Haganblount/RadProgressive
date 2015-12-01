@@ -3,5 +3,5 @@
     Go to Cart
     %span.card-items-count (#{@card_items.sum(:count)})
 - else
-  = link_to new_card_path, remote: true, class: 'btn go-to-cart-btn' do
+  = link_to new_card_path, remote: true, class: 'btn go-to-cart-btn btn-flag' do
     Go to Cart

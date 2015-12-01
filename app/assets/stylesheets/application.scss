@@ -44,3 +44,10 @@ p.done {
     display: inline-block !important;
   }
 }
+
+.btn-flag {
+  background-image: image-url('flag-btn.png');
+}
+
+.clear { clear: both; }
+.right { float: right; }

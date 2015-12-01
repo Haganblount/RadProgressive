@@ -1,7 +1,7 @@
 input.labelauty + label {
   border-radius: 0 !important;
   height: 45px !important;
-  width: 55px !important;
+  width: 98% !important;
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -9,6 +9,7 @@ input.labelauty + label {
 .labelauty-checked, .labelauty-unchecked { display: none !important; }
 
 input.labelauty:checked + label {
+  width: 95% !important;
   background-color: black;  
 }
 
@@ -16,7 +17,7 @@ input.labelauty:checked + label {
   border: 2px solid black !important;
   background-position-x: 50% !important;
   height: 41px !important;
-  width: 55px !important;
+  width: 95% !important;
 }
 
 .labelauty-checked-image {
@@ -29,12 +30,3 @@ input.labelauty:checked + label {
   background-image: image-url('color-grey.png') !important;
 }
 
-@media (max-width: 370px) {
-  label[for="card_item_is_black"] {
-    width: 50px !important;
-  }
-
-  .labelauty-checked-image, .labelauty-unchecked-image {
-    width: 50px !important;
-  }
-}

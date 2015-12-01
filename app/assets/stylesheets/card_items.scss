@@ -26,11 +26,7 @@
         margin-top: 15px;
       }
 
-      .col-xs-3 { 
-        width: 20.5%;
-        margin-left: 10px;
-      }
-
+    
       .bottom {
         margin-top: 80px;
 
@@ -59,22 +55,11 @@
       padding-top: 9px;
       padding-right: 10px;
     }
-
-    #card_item_countSelectBoxIt, #card_item_countSelectBoxItOptions {
-      width: 60px !important;
-      min-width: 60px !important;
-    }
-
-    .selectboxit-btn { width: 70px !important; }
-    .selectboxit.select.required.select-box-it { width: 70px !important; }
-    .selectboxit-options.selectboxit-list { min-width: 70px !important; }
   }
 
   .item-actions {
-    width: 13%;
     button.btn, a.btn {
       height: 45px;
-      width: 50px;
       border: none;
       padding: 0;
 
@@ -98,115 +83,22 @@
       }
     }
   }
-
-  .row {
-    .col-xs-1:first-child { margin-right: 2px; }
-    
-    .col-xs-4, .col-xs-2 { 
-      padding-right: 0;
-    }
-
-    .col-xs-2 + .col-xs-1 {
-      padding-left: 10px;
-    }
-
-    .col-xs-1 + .col-xs-3 {
-      padding-left: 17px;
-      padding-right: 5px;
-    }
-
-    .col-xs-3 + .col-xs-2 {
-      padding-left: 0;
-    }
-
-    .col-xs-4 { width: 30%; }
-
-    .card-items .has-cart-items {
-      background-image: image-url('flag-btn.png');
-    }
-
-    .col-xs-5 { 
-      padding-right: 0px;
-      width: 44.5%;
-
-      .btn {
-        width: 100%;
-        padding: 11px 0;
-        text-align: center;
-      }
-    }
-
-    .col-xs-5 + .col-xs-5 { 
-      margin-left: 9px; 
-      padding-left: 0px;
-    } 
-  }
 }
 
-@media (max-width: 500px) { 
-  form {
-    row:first-child {
-      .col-xs-2 + .col-xs-1 {
-       padding-left: 10px;
-      }
-    }
-  }
-}
-
-@media (max-width: 450px) {
+@media (max-width: 400px) {
   .card_items {
+    .form-group .selectboxit-text, .price-label { 
+      font-size: 25px !important;
+    }
+
+    .price-label {
+      height: 33px !important;
+      padding-top: 12px !important;
+    }
+
     .panel.complete-order {
       .col-xs-3 { 
         font-size: 16px !important;
-        margin-left: 4px !important;
-      }
-    }
-
-    .row {
-      .col-xs-5 {       
-        width: 46%;
-      }
-
-      .col-xs-4 + .col-xs-2 { 
-        padding-left: 6px;
-      }
-    }
-
-    form {
-      button.btn { width: 60px; } 
-
-      .selectboxit.select.required.select-box-it { width: 60px !important; }
-      .selectboxit-options.selectboxit-list { min-width: 60px !important; }
-
-      .price-label { 
-        font-size: 30px; 
-        height: 32px;
-        padding-top: 13px;
-      }
-    }
-  }
-}
-
-@media (max-width: 370px) {
-  .card_items {
-    .row {
-      .col-xs-1:first-child { 
-        padding-left: 0; 
-        margin-right: 5px;
-      }
-
-      .col-xs-2 + .col-xs-1 {
-        padding-right: 18px;
-      }
-
-      .col-xs-3.price-col { 
-        width: 27%;
-        padding-right: 1px;
-      }
-
-      .col-xs-1 + .col-xs-2 { 
-        padding-right: 1px; 
-        padding-left: 10px;
       }
     }
   }
