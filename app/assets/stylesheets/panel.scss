@@ -35,15 +35,10 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
   .panel {
     width: 85%;
     right: 0 !important;
-  }
-}
-
-@media (max-width: 400px) {
-  .panel {
     margin-top: 50%;
     bottom: inherit;
     opacity: 0.9;
