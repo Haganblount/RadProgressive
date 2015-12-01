@@ -1,8 +1,7 @@
 :plain
-  $('body').removeClass()
-  $('body').addClass('cards')
-  
-  $(".panel").transition({ rotate: '30deg', x: '550px' }, function() {
+  $(".panel").transition(window.transitionParams, function() {
+    $('body').removeClass()
+    $('body').addClass('cards')
     $('.panel').html("#{escape_javascript(render('new'))}")
     $('.panel').css({ rotate: '0deg', x: '0' })
   });

@@ -24,7 +24,11 @@ $ ->
       shuffle: true
       images: gon.backgrounds
 
-
+  if $(window).width() > 400
+    window.transitionParams = { rotate: '30deg', x: '550px' }
+  else 
+    window.transitionParams = { opacity: 0 }
+  
   $(document).on 'change', '#new_card input[sync-with]', ->
     syncEl = $($(@).attr('sync-with'))
 

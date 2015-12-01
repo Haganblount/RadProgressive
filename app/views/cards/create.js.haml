@@ -3,7 +3,7 @@
     $('form').replaceWith("#{escape_javascript(render('form'))}");
 - else
   :plain 
-    $(".panel").transition({ rotate: '30deg', x: '550px' }, function() {
+    $(".panel").transition(window.transitionParams, function() {
       $('.panel').html("#{escape_javascript(render('done'))}");
       $('.panel').css({ rotate: '0deg', x: '0' })
     });
