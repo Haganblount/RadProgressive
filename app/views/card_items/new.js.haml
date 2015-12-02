@@ -1,8 +1,15 @@
 :plain
-  $(".panel").transition(window.transitionParams, function() {
+  var panel = "#{escape_javascript(render('new'))}"
+  
+  if($(window).width() < 400) {
     $('body').removeClass()
     $('body').addClass('card_items')
-    $('.panel').html("#{escape_javascript(render('new'))}")
-    $('.panel').css({ rotate: '0deg', x: '0px' })
-  });
-  
+    $('.panel').html(panel)
+  } else {
+    $(".panel").transition(window.transitionParams, function() {
+      $('body').removeClass()
+      $('body').addClass('card_items')
+      $('.panel').html(panel)
+      $('.panel').css({ rotate: '0deg', x: '0px' })
+    }); 
+  }

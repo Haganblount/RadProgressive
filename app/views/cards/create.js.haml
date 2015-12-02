@@ -3,8 +3,13 @@
     $('form').replaceWith("#{escape_javascript(render('form'))}");
 - else
   :plain 
-    $(".panel").transition(window.transitionParams, function() {
-      $('.panel').html("#{escape_javascript(render('done'))}");
-      $('.panel').css({ rotate: '0deg', x: '0' })
-    });
+    var panel = "#{escape_javascript(render('done'))}"
+    if($(window).width() < 400) {
+      $('.panel').html(panel);
+    } else {
+      $(".panel").transition(window.transitionParams, function() {
+        $('.panel').html(panel);
+        $('.panel').css({ rotate: '0deg', x: '0' })
+      });
+    }
     
