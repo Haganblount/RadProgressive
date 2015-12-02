@@ -55,9 +55,3 @@ p.done {
 
 .clear { clear: both; }
 .right { float: right; }
-
-@media (max-width: 400px) {
-  .ladda-button:hover, .ladda-spinner {
-    display: none !important;
-  }
-}
