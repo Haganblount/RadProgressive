@@ -13,10 +13,10 @@
     .col-18
       
       = f.input :size, as: :select, 
-                       collection: select_size_collection, 
-                       input_html: { class: "select-box-it #{card_item.new_record? && select_size_collection.count == 1 ? 'disabled' : nil}" }, 
-                       include_blank: false,
-                       disabled: card_item.persisted? ? true : false
+                       collection: SHIRT_SIZES,
+                       input_html: { class: "select-box-it" }, 
+                       include_blank: false
+                      
     .col-1
     .col-16
       = f.input :count, as: :select, 
