@@ -17,9 +17,9 @@
       = f.input :billing_address_2, input_html: { placeholder: 'Address Line 2', "sync-with" => '#card_shipping_address_2' }
       = f.input :billing_city, input_html: { placeholder: 'City', "sync-with" => '#card_shipping_city' }
       .clear
-        .col-15
+        .col-15.col-state
           = f.input :billing_state, input_html: { placeholder: 'ST', "sync-with" => '#card_shipping_state' }
-        .col-65.right
+        .col-65.col-zip.right
           = f.input :billing_zip, input_html: { placeholder: 'ZIP Code', "sync-with" => '#card_shipping_zip' }
     .col-8
     .col-40
@@ -30,9 +30,9 @@
       = f.input :shipping_address_2, input_html: { placeholder: 'Address Line 2' }
       = f.input :shipping_city, input_html: { placeholder: 'City' }
       .clear
-        .col-15
+        .col-15.col-state
           = f.input :shipping_state, input_html: { placeholder: 'ST' }
-        .col-65.right
+        .col-65.right.col-zip
           = f.input :shipping_zip, input_html: { placeholder: 'ZIP Code' }
   
   - if @card.errors[:same_shiping].any?
@@ -42,16 +42,16 @@
 
   .row
     .col-5
-    .col-40
+    .col-40.col-card-number
       = f.input :card_number, input_html: { placeholder: 'Card #' }
     .col-8
-    .col-7
+    .col-7.col-card-month
       = f.input :card_month, input_html: { placeholder: 'M' }
     .col-8
-    .col-7
+    .col-7.col-card-year
       = f.input :card_year, input_html: { placeholder: 'YR' }
     .col-8
-    .col-9
+    .col-9.col-card-cvv
       = f.input :card_cvv, as: :password, input_html: { placeholder: 'CVV' }
   
   .row.prices

@@ -11,3 +11,16 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .cards form {
+    .row:not(.form-actions) {
+      .col-40 { width: 38% !important; }
+      .col-7 { width: 5% !important; }
+      .col-8 { width: 10% !important; } 
+      .col-9 { width: 8% !important; } 
+      .col-45 { width: 40% !important; }
+      .col-65 { width: 60% !important; }
+    }
+  }
+}
