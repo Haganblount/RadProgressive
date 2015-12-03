@@ -15,14 +15,31 @@
 
 $ ->
   if gon.backgrounds.length > 0
-    pageBackgrounds = new mbBgndGallery
-      containment: 'body'
-      timer: 4000
-      effTimer: 2000
-      grayScale: false
-      effect: 'zoom'
-      shuffle: true
-      images: gon.backgrounds
+    if $(window).width() > 400
+      pageBackgrounds = new mbBgndGallery
+        containment: 'body'
+        timer: 4000
+        effTimer: 2000
+        grayScale: false
+        effect: 'zoom' if $(window).width() > 400
+        shuffle: true
+        images: gon.backgrounds
+        preserveTop: true
+    else
+      el = $('img#backgrounds')
+      counter = 1
+      el.attr('src', gon.backgrounds[0])
+
+      setInterval(->
+        counter += 1
+        if counter >= gon.backgrounds.length
+          counter = 0
+        
+        el.attr('src', gon.backgrounds[counter])
+      , 4000)
+
+
+      
 
   if $(window).width() > 400
     window.transitionParams = { rotate: '30deg', x: '550px' }

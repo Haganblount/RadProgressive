@@ -1,1 +1,23 @@
 .mbBgndGallery { left: 0px; }
+
+img#backgrounds {
+  max-width: 104%;
+  margin: -7px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 400px) { 
+  .mbBgndGallery {
+    width: auto !important;
+    height: auto !important;
+    position: inherit !important;
+
+    img {
+      max-width: 100% !important;
+      position: inherit !important;
+      height: initial !important;
+      margin: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
+}

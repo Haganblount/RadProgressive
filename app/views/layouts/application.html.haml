@@ -12,6 +12,7 @@
     = csrf_meta_tags
   
   %body.front{ class: "#{yield(:body_classes)} #{controller_name}" }
+    %img#backgrounds
     .container
       = yield
       /= render 'layouts/not_authorized_modal'
