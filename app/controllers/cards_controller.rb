@@ -23,21 +23,16 @@ class CardsController < ApplicationController
                                                   billing: { street_address: card_params[:billing_address_1],
                                                              locality: card_params[:billing_city],
                                                              region: card_params[:billing_state],
-                                                             postal_code: card_params[:billing_zip] })
+                                                             postal_code: card_params[:billing_zip] },
+                                                  options: { submit_for_settlement: true })
 
       
       if @btransaction.success?
-        @sbtransaction = Braintree::Transaction.submit_for_settlement @btransaction.transaction.id
-        
-        if @sbtransaction.success?
-          @card.braintree_id = @btransaction.transaction.id
+        @card.braintree_id = @btransaction.transaction.id
           
-          if @card.save
-            CardMailer.send_card_to_user(@card).deliver
-            CardMailer.send_card_to_admin(@card).deliver
-          end
-        else
-          @card.errors.add(:card_number, @sbtransaction.errors.map(&:message).join(".\n"))
+        if @card.save
+          CardMailer.send_card_to_user(@card).deliver
+          CardMailer.send_card_to_admin(@card).deliver
         end
       else
         @card.errors.add(:card_number, @btransaction.errors.map(&:message).join(".\n"))

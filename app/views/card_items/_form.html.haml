@@ -39,3 +39,13 @@
   :javascript 
     Ladda.bind('.ladda-button')
     $(".checkbox-new, .checkbox-#{card_item.id}").not('.labelauty').labelauty({force_random_id: true})
+
+    $(document).on('change', '#new_card input[sync-with]', function() {
+      var syncEl = $($(this).attr('sync-with'))
+
+      if(syncEl != undefined) {
+        if(syncEl.val() == null || syncEl.val() == '') {
+          $($(this).attr('sync-with')).val($(this).val())
+        }
+      }
+    });

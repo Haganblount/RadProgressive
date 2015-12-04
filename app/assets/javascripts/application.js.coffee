@@ -51,11 +51,4 @@ $ ->
   formGroupEl.find('.help-block').addClass('hidden')
   formGroupEl.removeClass('has-error')
 
-  $(document).on 'change', '#new_card input[sync-with]', ->
-    syncEl = $($(@).attr('sync-with'))
-
-    if syncEl != undefined
-      if syncEl.val() == null || syncEl.val() == ''
-        $($(@).attr('sync-with')).val($(@).val())
-
 
