@@ -1,7 +1,7 @@
 class CardMailer < BaseMailer
   def send_card_to_user(card)
     @card = card
-    mail(to: @card.email, subject: 'You just fucking ordered the shirts below')
+    mail(to: @card.email, subject: 'Bernie Fucking Sanders probably appreciates what you just did')
   end
 
   def send_card_to_admin(card)

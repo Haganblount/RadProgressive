@@ -1,9 +1,9 @@
-%p You just fucking ordered the shirts below:
+%p You just ordered the fucking shirts below:
 %ul
   - @card.card_items.each do |card_item|
-    %li #{card_item.count} #{'shirt'.pluralize(card_item.count)}((#{card_item.color})) - $#{card_item.price}
+    %li #{card_item.count} #{card_item.size} - #{card_item.color.black? ? 'Black on Black' : 'White on Grey' } - $#{card_item.price}
 
-%p It's being shipped to your bitch-ass at:
+%p Your order is being shipped to:
 %p
   %b First name:
   = @card.shipping_first_name
@@ -26,4 +26,5 @@
   %b ZIP Code:
   = @card.shipping_zip
 %p
-%p If there's any fucking problem with that, email us, you dumbass.
+%p If there's any problem with that, you’re fucked. Reply to this email with the subject line “I Fucked up. I’m a fucking dumbass” and we just may be able to un-fuck you.
+%p{ style: "font-size: 14px;" } Copyright 2015 FeelTheFuckingBern.com Bernie Fucking Sanders™
