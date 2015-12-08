@@ -9,6 +9,7 @@
     = stylesheet_link_tag    'application', media: 'all'
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
     = javascript_include_tag 'application'
+    = javascript_include_tag 'google_analytics' if Rails.env.production?
     = csrf_meta_tags
   
   %body.front{ class: "#{yield(:body_classes)} #{controller_name}" }
