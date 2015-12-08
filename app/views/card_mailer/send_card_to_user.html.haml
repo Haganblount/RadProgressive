@@ -1,30 +1,29 @@
-%p You just ordered the fucking shirts below:
-%ul
-  - @card.card_items.each do |card_item|
-    %li #{card_item.count} #{card_item.size} - #{card_item.color.black? ? 'Black on Black' : 'White on Grey' } - $#{card_item.price}
+%h5 YOU JUST ORDERED THE FUCKING SHIRTS BELOW
+%table
+  %tbody
+    - if @card.card_items.any?
+      - @card.card_items.each do |card_item|
+        %tr
+          %td{ style: "padding-top: 10px;" } #{card_item.count} #{card_item.size} #{card_item.color.black? ? 'Black on Black' : 'White on Grey' } 
+          %td{ style: "padding-top: 10px;" } - 
+          %td{ style: "padding-top: 10px;" } $#{card_item.price}
+      %tr
+        %td{ style: "padding-top: 10px;" } Shipping:
+        %td{ style: "padding-top: 10px;" } 
+        %td{ style: "padding-top: 10px;" } $#{SHIPPING_PRICE}
+      %tr 
+        %td{ style: "padding-top: 10px;" } Total:
+        %td{ style: "padding-top: 10px;" } 
+        %td{ style: "padding-top: 10px;" } $#{@card.total_price}
 
-%p Your order is being shipped to:
-%p
-  %b First name:
-  = @card.shipping_first_name
-  %br
-  %b Last name:
-  = @card.shipping_last_name
-  %br
-  %b Address 1:
-  = @card.shipping_address_1
-  %br
-  %b Address 1:
-  = @card.shipping_address_2
-  %br
-  %b City:
-  = @card.shipping_city
-  %br
-  %b State:
-  = @card.shipping_state
-  %br
-  %b ZIP Code:
-  = @card.shipping_zip
-%p
-%p If there's any problem with that, you’re fucked. Reply to this email with the subject line “I Fucked up. I’m a fucking dumbass” and we just may be able to un-fuck you.
+%br
+%h5 YOUR ORDER IS BEING SHIPPED TO
+%p #{@card.shipping_first_name} #{@card.shipping_last_name} 
+%p #{@card.shipping_address_1} 
+%p #{@card.shipping_address_2} 
+
+%br
+%br
+
+%h5 If there's any problem with that, you’re fucked. Reply to this email with the subject line “I Fucked up. I’m a fucking dumbass” and we just may be able to un-fuck you.
 %p{ style: "font-size: 14px;" } Copyright 2015 FeelTheFuckingBern.com Bernie Fucking Sanders™
