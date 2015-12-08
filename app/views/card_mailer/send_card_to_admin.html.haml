@@ -2,28 +2,26 @@
   New order /
   = link_to 'Go to Admin panel', admin_card_url(@card)
 
-%ul
-  - @card.card_items.each do |card_item|
-    %li #{card_item.count} #{'shirt'.pluralize(card_item.count)}(#{card_item.color}) - $#{card_item.price}
-%hr
-%p
-  %b First name:
-  = @card.shipping_first_name
-  %br
-  %b Last name:
-  = @card.shipping_last_name
-  %br
-  %b Address 1:
-  = @card.shipping_address_1
-  %br
-  %b Address 1:
-  = @card.shipping_address_2
-  %br
-  %b City:
-  = @card.shipping_city
-  %br
-  %b State:
-  = @card.shipping_state
-  %br
-  %b ZIP Code:
-  = @card.shipping_zip
+%h5 ORDER DETAILS
+%table
+  %tbody
+    - if @card.card_items.any?
+      - @card.card_items.each do |card_item|
+        %tr
+          %td{ style: "padding-top: 10px;" } #{card_item.count} #{card_item.size} #{card_item.color.black? ? 'Black on Black' : 'White on Grey' } 
+          %td{ style: "padding-top: 10px;" } - 
+          %td{ style: "padding-top: 10px;" } $#{card_item.price}
+      %tr
+        %td{ style: "padding-top: 10px;" } Shipping:
+        %td{ style: "padding-top: 10px;" } 
+        %td{ style: "padding-top: 10px;" } $#{SHIPPING_PRICE}
+      %tr 
+        %td{ style: "padding-top: 10px;" } Total:
+        %td{ style: "padding-top: 10px;" } 
+        %td{ style: "padding-top: 10px;" } $#{@card.total_price}
+
+%h5 SHIPPING ADDRESS
+%p #{@card.shipping_first_name} #{@card.shipping_last_name} 
+%p #{@card.shipping_address_1} 
+%p #{@card.shipping_address_2} 
+%p #{@card.shipping_city}, #{@card.shipping_state}, #{@card.shipping_zip}
