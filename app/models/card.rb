@@ -35,7 +35,7 @@ class Card < ActiveRecord::Base
   after_validation :set_card_number_errors
 
   def total_price
-    card_items.sum(:count) * SHIRT_PRICE + SHIPPING_PRICE
+    card_items.sum(:count) * SHIRT_PRICE 
   end
   
   private

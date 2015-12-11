@@ -5,4 +5,3 @@ US_STATES = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', '
 SHIRT_SIZES = ['XS', 'S', 'M', 'L', 'XL']
 
 SHIRT_PRICE = 25
-SHIPPING_PRICE = 5
