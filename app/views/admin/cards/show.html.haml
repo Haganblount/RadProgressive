@@ -8,7 +8,7 @@
   %dt Braintree ID:
   %dd= @card.braintree_id
   %dt Created at:
-  %dd= @card.created_at.strftime('%d-%m-%Y')
+  %dd= @card.created_at.to_usa
 
 .row
   .col-xs-5
