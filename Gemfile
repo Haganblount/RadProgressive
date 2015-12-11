@@ -36,6 +36,7 @@ gem 'braintree'
 gem 'airbrake'
 gem "historyjs-rails"
 gem 'enumerize'
+gem 'ransack'
 
 
 group :production do

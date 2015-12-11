@@ -2,6 +2,11 @@
   %h2 
     Payments
   
+= search_form_for @search, url: admin_cards_path, class: 'form-inline' do |f|
+  .form-group
+    = f.search_field :email_or_billing_first_name_or_billing_last_name_or_billing_address_1_or_billing_address_2_or_billing_city_or_billing_state_or_billing_zip_or_shipping_first_name_or_shipping_last_name_or_shipping_last_name_or_shipping_address_1_or_shipping_address_2_or_shipping_city_or_shipping_state_or_shipping_zip_or_braintree_id_cont, class: 'form-control'
+  = f.submit "Search", class: 'btn btn-default'
+
 %table.table.table-hover
   %thead
     %tr

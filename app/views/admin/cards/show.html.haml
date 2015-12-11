@@ -48,14 +48,17 @@
 
 - if @card.card_items.any?
   %legend Shirts  
-  %table
+  %table.table
     %thead
       %tr
         %th Count
         %th Size
         %th Total price
+        %th Color
+      
     %tbody
       - @card.card_items.each do |card_item|
         %th= card_item.count
         %th= card_item.size
         %th $#{card_item.price}
+        %th= card_item.color

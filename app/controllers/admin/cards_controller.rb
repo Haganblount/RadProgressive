@@ -4,6 +4,7 @@ class Admin::CardsController < AdminController
   end
   
   def index
-    @cards = Card.by_created_at.page(params[:page])
+    @search = Card.search(params[:q])
+    @cards = @search.result.by_created_at.page(params[:page]).per(50)
   end
 end
