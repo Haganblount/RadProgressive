@@ -9,6 +9,7 @@ class CardItemsController < ApplicationController
   def create
     @card_item = @session.card_items.build(card_item_params)
     @card_item.color = (card_item_params[:is_black] == '1' ? :black : :grey)
+    @card_item.sex = (card_item_params[:is_man] == '1' ? :man : :woman)
     @card_item.save
   end
 
@@ -27,6 +28,6 @@ class CardItemsController < ApplicationController
   end
 
   def card_item_params
-    params.require(:card_item).permit(:size, :count, :is_black)
+    params.require(:card_item).permit(:size, :count, :is_black, :is_man)
   end
 end

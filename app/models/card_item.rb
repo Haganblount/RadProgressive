@@ -1,9 +1,10 @@
 class CardItem < ActiveRecord::Base
   extend Enumerize
 
-  attr_accessor :is_black
+  attr_accessor :is_black, :is_man
 
   enumerize :color, in: [:grey, :black], default: :grey
+  enumerize :sex, in: [:man, :women], default: :man
 
   belongs_to :card
   belongs_to :session

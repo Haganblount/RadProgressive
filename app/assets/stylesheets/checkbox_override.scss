@@ -30,3 +30,15 @@ input.labelauty:checked + label {
   background-image: image-url('color-grey.png') !important;
 }
 
+input[name="card_item[is_man]"] + label {
+  .labelauty-unchecked-image {
+    background-image: image-url('sex-woman.png') !important;
+    background-position-x: 100% !important;
+    background-position-y: 100% !important;
+  }
+
+  .labelauty-checked-image {
+    background-image: image-url('sex-man.png') !important;
+  }
+}
+

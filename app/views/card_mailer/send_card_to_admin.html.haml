@@ -8,7 +8,7 @@
     - if @card.card_items.any?
       - @card.card_items.each do |card_item|
         %tr
-          %td{ style: "padding-top: 10px;" } #{card_item.count} #{card_item.size} #{card_item.color.black? ? 'Black on Black' : 'White on Grey' } 
+          %td{ style: "padding-top: 10px;" } #{card_item.count} #{card_item.sex}/#{card_item.size} #{card_item.color.black? ? 'Black on Black' : 'White on Grey' } 
           %td{ style: "padding-top: 10px;" } - 
           %td{ style: "padding-top: 10px;" } $#{card_item.price}
       %tr 
