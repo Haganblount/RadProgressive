@@ -42,25 +42,26 @@ input[name="card_item[is_man]"] + label {
     content: 'W';
     margin-left: 30px;
     margin-top: 20px;
-    color: #fff;
+    color: black;
   }
 
   .labelauty-checked-image:before {
     content: 'M';
-    margin-left: 2px;
     margin-top: 2px;
-    color: black;
+    color: #fff;
   }
 
   .labelauty-unchecked-image {
+    background-color: #eaeaea !important;
     background-image: image-url('sex-woman.png') !important;
-    background-position-x: 15% !important;
+    background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
 
   .labelauty-checked-image {
+    background-color: black !important;  
     background-image: image-url('sex-man.png') !important;
-    background-position-x: 130% !important;
+    background-position-x: 110% !important;
   }
 }
 

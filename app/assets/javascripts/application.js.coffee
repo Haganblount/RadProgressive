@@ -46,9 +46,23 @@ $ ->
   else 
     window.transitionParams = { opacity: 0 }
   
- $(document).on 'input', '.form-group.has-error input', ->
-  formGroupEl = $(@).parents('.form-group')
-  formGroupEl.find('.help-block').addClass('hidden')
-  formGroupEl.removeClass('has-error')
+
+  $(document).on 'input', '.form-group.has-error input', ->
+    formGroupEl = $(@).parents('.form-group')
+    formGroupEl.find('.help-block').addClass('hidden')
+    formGroupEl.removeClass('has-error')
+
+  $('input[name="card_item[is_man]"][type="checkbox"]').change ->
+    option = $('#card_item_size option[value="2XL"]')
+    boxOption = $('li[data-val="2XL"]')
+    box = $('#card_item_size').data("selectBox-selectBoxIt")
+  
+    if $(@).is(':checked')
+      box.enableOption(option.index())
+    else
+      box.disableOption(option.index())
+      
+      
+
 
 
