@@ -65,3 +65,44 @@ input[name="card_item[is_man]"] + label {
   }
 }
 
+@media (max-width: 400px) {
+  input[name="card_item[is_man]"] + label {
+    .labelauty-unchecked-image {
+      background-position-y: 0px !important;
+    }
+
+    .labelauty-unchecked-image:before {
+      margin-left: 20px;
+      margin-top: 23px;
+    }
+  }
+
+  .cart-add-btn, .cart-check-btn {
+    background-size: 25px;
+  }
+
+  .cart-check-btn:hover {
+    width: 30px !important;
+  }
+
+  .labelauty-unchecked-image:before, .labelauty-checked-image:before {
+    font-size: 18px !important;
+  }
+
+  .labelauty-unchecked-image, .labelauty-checked-image {
+   background-size: 30px; 
+  }
+
+  .selectboxit .selectboxit-arrow-container .selectboxit-arrow {
+    border-top-width: 12px !important;
+  }
+
+  #card_item_sizeSelectBoxItText.selectboxit-text,  {
+    font-size: 17px !important;
+  }
+
+  #card_item_countSelectBoxItText {
+    font-size: 22px !important;
+  }
+}
+
