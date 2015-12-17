@@ -10,6 +10,10 @@ class CardItemsController < ApplicationController
     @card_item = @session.card_items.build(card_item_params)
     @card_item.color = (card_item_params[:is_black] == '1' ? :black : :grey)
     @card_item.sex = (card_item_params[:is_man] == '1' ? :man : :woman)
+
+    puts '----------'
+    puts card_item_params[:is_man]
+    puts '----------'
     @card_item.save
   end
 

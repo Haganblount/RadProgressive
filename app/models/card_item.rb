@@ -4,7 +4,7 @@ class CardItem < ActiveRecord::Base
   attr_accessor :is_black, :is_man
 
   enumerize :color, in: [:grey, :black], default: :grey
-  enumerize :sex, in: [:man, :women], default: :man
+  enumerize :sex, in: [:man, :woman], default: :man
 
   belongs_to :card
   belongs_to :session
