@@ -39,7 +39,7 @@ Rails.application.configure do
   config.assets.digest = true
   config.assets.initialize_on_precompile = true
   config.action_controller.asset_host = "//s3.amazonaws.com/#{ENV['FOG_DIRECTORY']}"
-  config.action_mailer.asset_host = 'http://www.feelthefuckingbern.com'
+  config.action_mailer.asset_host = 'https://www.radprogressive.com'
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
@@ -81,7 +81,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: "http://www.feelthefuckingbern.com/" }
+  config.action_mailer.default_url_options = { host: "https://www.radprogressive.com/" }
 
   config.paperclip_defaults = {
     :storage => :s3,

@@ -1,5 +1,5 @@
 class BaseMailer < ActionMailer::Base
-  default from: 'admin@feelthefuckingbern.com'
+  default from: 'admin@radprogressive.com'
   layout 'mailer'
 
   def admins
