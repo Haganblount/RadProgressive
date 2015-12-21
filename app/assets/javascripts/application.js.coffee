@@ -9,7 +9,6 @@
 #= require libs/jquery.mb.bgndGallery/jquery.mb.bgndGallery
 #= require libs/jquery-backstretch
 #= require libs/selectBoxIt
-#= require history_native.min
 #= require libs/jquery-labelauty
 #= require_self
 

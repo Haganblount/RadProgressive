@@ -1,4 +1,5 @@
 = simple_form_for @card, wrapper: :clean_form, remote: true do |f|
+  = f.input :stripe_token, as: :hidden
   %label Email address
   .row
     .col-5
@@ -43,16 +44,19 @@
   .row
     .col-5
     .col-40.col-card-number
-      = f.input :card_number, input_html: { placeholder: 'Card #' }
+      = f.input :card_number, input_html: { placeholder: 'Card #', data: { stripe: 'number' } }
     .col-8
     .col-8.col-card-month
-      = f.input :card_month, input_html: { placeholder: 'M' }
+      = f.input :card_month, input_html: { placeholder: 'M', data: { stripe: 'exp_month' } }
     .col-8
     .col-7.col-card-year
-      = f.input :card_year, input_html: { placeholder: 'YR' }
+      = f.input :card_year, input_html: { placeholder: 'YR', data: { stripe: 'exp_year' } }
     .col-8
     .col-9.col-card-cvv
-      = f.input :card_cvv, as: :password, input_html: { placeholder: 'CVV' }
+      = f.input :card_code, as: :password, input_html: { placeholder: 'CVV', data: { stripe: 'cvc' } }
+  .row
+    .col-5
+    .col-90.help-block.payment-errors
   
   .row.prices
     .col-10
@@ -74,5 +78,26 @@
     if($(window).width() > 400) {
       Ladda.bind('.ladda-button')
     }
+
+    var stripeResponseHandler, $cardForm;
+
+    $cardForm = $('#new_card');
+    stripeResponseHandler = function(status, response) {
+      if (response.error) {
+        $cardForm.find('.payment-errors').text(response.error.message);
+        $cardForm.find('input[type=submit]').prop('disabled', false);
+        Ladda.stopAll()
+      } else {
+        $('#card_stripe_token').val(response.id)
+        $cardForm.submit()
+      }
+    };
+
+    $cardForm.submit(function() {
+      if($('#card_stripe_token').val() == '') {
+        Stripe.card.createToken(this, stripeResponseHandler);
+        return false;
+      }
+    });
 
 

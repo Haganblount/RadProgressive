@@ -31,6 +31,10 @@ form {
     }
   }
 
+  .help-block.payment-errors {
+    color: #a94442;
+  }
+
   .card_shipping_state, .card_billing_state, .card_card_cvv, .card_card_year, .card_card_month {
     .help-block { 
       display: none !important;

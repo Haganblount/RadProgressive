@@ -1,10 +1,11 @@
 class Card < ActiveRecord::Base
   include Scopes
   
-  attr_accessor :card_number, :card_year, :card_month, :card_cvv, :email_confirmation
+  attr_accessor :card_number, :card_year, :card_month, :card_code, :email_confirmation, :stripe_token
 
   has_many :card_items, dependent: :destroy
 
+  validates :stripe_token, presence: true
   validates :email, confirmation: true, presence: true,  email: true, length: { maximum: 254 }
   validates :email_confirmation, presence: true, email: true
   validates :billing_first_name, presence: true, length: { maximum: 254 }
@@ -27,23 +28,24 @@ class Card < ActiveRecord::Base
                            length: { maximum: 5 },
                            postcode_format: { country_code: :us, message: "entered is not a valid postcode for US." }
 
-  validates :card_number, presence: true, credit_card_number: true
-  validates :card_year, presence: true, numericality: true, length: { is: 2 }
-  validates :card_month, presence: true, numericality: true, length: { is: 2 }
-  validates :card_cvv, presence: true, numericality: true, length: { is: 3 }
-
-  after_validation :set_card_number_errors
+  before_create :charge
 
   def total_price
     card_items.sum(:count) * SHIRT_PRICE 
   end
   
-  private
+  def charge
+    begin
+      charge = Stripe::Charge.create(
+        amount: self.amount * 100,
+        currency: 'usd',
+        source: self.stripe_token
+      )
 
-  def set_card_number_errors
-    errors.add(:card_number, "Card year #{errors[:card_year].first}") if errors[:card_year].any?
-    errors.add(:card_number, "Card month #{errors[:card_month].first}") if errors[:card_month].any?
-    errors.add(:card_number, "CVV #{errors[:card_cvv].first}") if errors[:card_cvv].any?
+      self.stripe_id = charge.id
+    rescue Stripe::CardError => e
+      errors.add(:card_number, e.message)
+    end
   end
 end
 

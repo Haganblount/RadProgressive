@@ -32,7 +32,7 @@ gem 'jquery-ui-rails'
 gem 'fancybox-rails'
 gem 'activerecord-session_store'
 gem "ladda-rails"
-gem 'braintree'
+gem 'stripe-rails'
 gem 'airbrake'
 gem "historyjs-rails"
 gem 'enumerize'
