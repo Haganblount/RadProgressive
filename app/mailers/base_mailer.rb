@@ -3,6 +3,6 @@ class BaseMailer < ActionMailer::Base
   layout 'mailer'
 
   def admins
-    User.select(:email).map(&:email)
+    User.select(:email).map(&:email).join(', ')
   end
 end

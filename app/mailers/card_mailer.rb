@@ -6,6 +6,6 @@ class CardMailer < BaseMailer
 
   def send_card_to_admin(card)
     @card = card
-    mail(to: admins, from: @card.email, subject: 'New order')
+    mail(to: admins, subject: 'New order')
   end
 end
