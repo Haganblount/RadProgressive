@@ -10,52 +10,17 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     @card.card_items << @session.card_items.without_card
     @card.amount = current_user.present? ? 1 : @session.total_price
-    @card.save
+    
+    if @card.save
+      CardMailer.send_card_to_user(@card).deliver
+      CardMailer.send_card_to_admin(@card).deliver
+    end
 
     respond_to do |format|
       format.html { respond_with @card, location: done_cards_path }
       format.js {  }
     end
   end
-
-  # def create
-  #   @card = Card.new(card_params)
-  #   @card.card_items << @session.card_items.without_card
-  #   @card.amount = current_user.present? ? 1 : @session.total_price
-    
-  #   if @card.valid?
-  #     @btransaction = Braintree::Transaction.sale(amount: @card.amount,
-  #                                                 credit_card: { number: card_params[:card_number],
-  #                                                                expiration_year: '20' + card_params[:card_year],
-  #                                                                expiration_month: card_params[:card_month],
-  #                                                                cvv: card_params[:cvv] },
-  #                                                 customer: { first_name: card_params[:billing_first_name],
-  #                                                             last_name: card_params[:billing_last_name],
-  #                                                             email: card_params[:email] },
-  #                                                 billing: { street_address: card_params[:billing_address_1],
-  #                                                            locality: card_params[:billing_city],
-  #                                                            region: card_params[:billing_state],
-  #                                                            postal_code: card_params[:billing_zip] },
-  #                                                 options: { submit_for_settlement: true })
-
-      
-  #     if @btransaction.success?
-  #       @card.braintree_id = @btransaction.transaction.id
-          
-  #       if @card.save
-  #         CardMailer.send_card_to_user(@card).deliver
-  #         CardMailer.send_card_to_admin(@card).deliver
-  #       end
-  #     else
-  #       @card.errors.add(:card_number, @btransaction.errors.map(&:message).join(".\n"))
-  #     end
-  #   end
-
-  #   respond_to do |format|
-  #     format.html { respond_with @card, location: done_cards_path }
-  #     format.js {  }
-  #   end
-  # end
 
   def done
   end
