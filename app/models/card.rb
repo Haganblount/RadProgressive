@@ -29,6 +29,11 @@ class Card < ActiveRecord::Base
                            postcode_format: { country_code: :us, message: "entered is not a valid postcode for US." }
 
   before_create :charge
+  after_validation :clean_card_fields
+
+  def clean_card_fields
+    self.card_number, self.card_year, self.card_month, self.card_code = nil, nil, nil, nil
+  end
 
   def total_price
     card_items.sum(:count) * SHIRT_PRICE 
