@@ -47,10 +47,10 @@
       = f.input :card_number, input_html: { placeholder: 'Card #', data: { stripe: 'number' } }
     .col-8
     .col-8.col-card-month
-      = f.input :card_month, input_html: { placeholder: 'M', data: { stripe: 'exp_month' } }
+      = f.input :card_month, input_html: { placeholder: 'MM', data: { stripe: 'exp_month' } }
     .col-8
     .col-7.col-card-year
-      = f.input :card_year, input_html: { placeholder: 'YR', data: { stripe: 'exp_year' } }
+      = f.input :card_year, input_html: { placeholder: 'YY', data: { stripe: 'exp_year' } }
     .col-8
     .col-9.col-card-cvv
       = f.input :card_code, as: :password, input_html: { placeholder: 'CVV', data: { stripe: 'cvc' } }
