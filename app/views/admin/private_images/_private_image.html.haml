@@ -1,0 +1,4 @@
+.photo{ id: "background-#{private_image.id}", data: { id: private_image.id } }
+  = link_to private_image.image.url(:original), target: '_blank', class: 'copy-to-buffer' do
+    = image_tag private_image.image.url(:thumb)
+  = link_to 'Remove', [:admin, private_image], method: :delete, remote: true, class: 'btn btn-danger'

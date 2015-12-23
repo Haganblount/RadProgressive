@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     
     resources :cards, only: [:index, :show]
 
-    resources :backgrounds do
+    resources :backgrounds, :private_images do
       collection do
         post 'positions'
       end

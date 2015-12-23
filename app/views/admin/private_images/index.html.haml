@@ -1,0 +1,11 @@
+
+= s3_uploader_form callback_url: admin_private_images_path, callback_param: 'private_image[image_url]', id: 's3-uploader', max_file_size: 3.megabytes do
+  
+  = file_field_tag :file, multiple: true
+  = link_to 'Get TXT', admin_private_images_path(format: :txt)
+
+  .files.sort-photos{ data: { url: positions_admin_private_images_path } }
+    = render @private_images
+  
+
+= render 'admin/private_images/upload_tmpl'
