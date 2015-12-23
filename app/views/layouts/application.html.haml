@@ -2,9 +2,9 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    = display_meta_tags site: 'FeelTheFuckingBern'
+    = display_meta_tags site: 'Rad Progressive'
     = favicon_link_tag 'favicon.ico'
-    %title FeelTheFuckingBern
+    %title Rad Progressive
     = include_gon
     = stylesheet_link_tag    'application', media: 'all'
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
@@ -17,4 +17,4 @@
     %img#backgrounds
     .container
       = yield
-      /= render 'layouts/not_authorized_modal'
+      = render 'subscribes/new'

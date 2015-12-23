@@ -1,0 +1,14 @@
+= simple_form_for @subscribe || Subscribe.new, wrapper: :clean_form, remote: true do |f|
+  
+  .row
+    .col-12
+    .col-70  
+      = f.input :email
+  .row 
+    .col-25
+    .col-50
+      %button.btn.ladda-button{ 'data-style' => 'expand-right', type: :submit }
+        SUBMIT
+  
+  :javascript
+    Ladda.bind('.ladda-button')

@@ -37,7 +37,7 @@ gem 'airbrake'
 gem "historyjs-rails"
 gem 'enumerize'
 gem 'ransack'
-
+gem 'gibbon'
 
 group :production do
   gem 'fog', '~>1.20'

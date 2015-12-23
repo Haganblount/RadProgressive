@@ -13,9 +13,10 @@ Rails.application.routes.draw do
   
 
   resources :card_items
+  resource :subscribes
 
   namespace :admin do
-    resources :users
+    resources :users, :subscribes
     
     resources :cards, only: [:index, :show]
 

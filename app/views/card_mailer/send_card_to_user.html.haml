@@ -1,10 +1,11 @@
+%h3 You're Feeling the Fucking Bern
 %h5 YOU JUST ORDERED THE FUCKING SHIRTS BELOW
 %table
   %tbody
     - if @card.card_items.any?
       - @card.card_items.each do |card_item|
         %tr
-          %td{ style: "padding-top: 10px;" } #{card_item.count} #{card_item.sex}/#{card_item.size} #{card_item.color.black? ? 'Black on Black' : 'White on Grey' } 
+          %td{ style: "padding-top: 10px;" } #{card_item.count} #{card_item.sex.man? ? 'M' : 'W'}/#{card_item.size} #{card_item.color.black? ? 'Black on Black' : 'White on Grey' } 
           %td{ style: "padding-top: 10px;" } - 
           %td{ style: "padding-top: 10px;" } $#{card_item.price}
       %tr 
@@ -23,4 +24,4 @@
 %br
 
 %h5 If there's any problem with that, you’re fucked. Reply to this email with the subject line “I Fucked up. I’m a fucking dumbass” and we just may be able to un-fuck you.
-%p{ style: "font-size: 14px;" } Copyright 2015 FeelTheFuckingBern.com Bernie Fucking Sanders™
+%p{ style: "font-size: 14px;" } Copyright 2015 RadProgressive.com Bernie Fucking Sanders™

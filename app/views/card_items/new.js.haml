@@ -4,12 +4,12 @@
   if($(window).width() < 400) {
     $('body').removeClass()
     $('body').addClass('card_items')
-    $('.panel').html(panel)
+    $('.panel.card-panel').html(panel)
   } else {
-    $(".panel").transition(window.transitionParams, function() {
+    $(".panel.card-panel").transition(window.transitionParams, function() {
       $('body').removeClass()
       $('body').addClass('card_items')
-      $('.panel').html(panel)
-      $('.panel').css({ rotate: '0deg', x: '0px' })
+      $('.panel.card-panel').html(panel)
+      $('.panel.card-panel').css({ rotate: '0deg', x: '0px' })
     }); 
   }

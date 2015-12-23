@@ -8,12 +8,13 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to 'FeelTheFuckingBern', admin_path, class: 'navbar-brand'
+          = link_to 'Rad Progressive', admin_path, class: 'navbar-brand'
         #example-nav-collapse.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
             = header_link 'Payments', admin_cards_path if user_signed_in?
             = header_link 'Admins', admin_users_path if user_signed_in?
             = header_link 'Backgrounds', admin_backgrounds_path if user_signed_in?
+            = header_link 'Subscribes', admin_subscribes_path if user_signed_in?
         
             - if user_signed_in?
               %li= link_to "Logout", destroy_user_session_path, method: :delete

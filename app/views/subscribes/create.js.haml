@@ -1,0 +1,9 @@
+- if @subscribe.new_record?
+  :plain
+    $('form.new_subscribe').replaceWith("#{escape_javascript(render('form'))}");
+- else
+  :plain 
+    var panel = "#{escape_javascript(render('show'))}"
+    $('.panel.subscribe').replaceWith(panel);
+
+    

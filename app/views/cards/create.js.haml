@@ -1,15 +1,15 @@
 - if @card.new_record?
   :plain
-    $('form').replaceWith("#{escape_javascript(render('form'))}");
+    $('.card-panel form').replaceWith("#{escape_javascript(render('form'))}");
 - else
   :plain 
     var panel = "#{escape_javascript(render('done'))}"
     if($(window).width() < 400) {
-      $('.panel').html(panel);
+      $('.panel.card-panel').html(panel);
     } else {
       $(".panel").transition(window.transitionParams, function() {
-        $('.panel').html(panel);
-        $('.panel').css({ rotate: '0deg', x: '0' })
+        $('.panel.card-panel').html(panel);
+        $('.panel.card-panel').css({ rotate: '0deg', x: '0' })
       });
     }
     

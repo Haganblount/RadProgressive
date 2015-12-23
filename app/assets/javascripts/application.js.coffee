@@ -60,6 +60,14 @@ $ ->
       box.enableOption(option.index())
     else
       box.disableOption(option.index())
+  
+  $(document).on 'click', '.close', ->
+    $(@).parents('.closed').hide()
+    return false
+
+  setTimeout ( ->
+    $('.panel.subscribe.hidden').removeClass('hidden')
+  ), 20000
       
       
 

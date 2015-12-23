@@ -1,0 +1,15 @@
+%legend
+  %h2 
+    Subscribes.
+%table.table.table-hover
+  %thead
+    %tr
+      %th Email
+      %th Mailchimp Id
+      %th Created At
+      %th 
+
+  %tbody
+    = render @subscribes
+
+= paginate @subscribes
