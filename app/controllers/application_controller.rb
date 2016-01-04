@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   def set_gon
     gon.shirt_price = SHIRT_PRICE
     gon.current_session_id = session.id
-    gon.ga_id = 'UA-10275433-14'
+    gon.ga_id = 'UA-71946977-1'
   end
 
   def set_backgrounds
