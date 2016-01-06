@@ -4,7 +4,7 @@
   %dt Email:
   %dd= @card.email
   %dt Total Price:
-  %dd $#{@card.amount}
+  %dd $#{@card.total_price}
   %dt Braintree ID:
   %dd= @card.braintree_id
   %dt Created at:
@@ -59,8 +59,9 @@
       
     %tbody
       - @card.card_items.each do |card_item|
-        %th= card_item.count
-        %th= card_item.size
-        %th $#{card_item.price}
-        %th= card_item.color
-        %th= card_item.sex
+        %tr
+          %th= card_item.count
+          %th= card_item.size
+          %th $#{card_item.price}
+          %th= card_item.color
+          %th= card_item.sex
