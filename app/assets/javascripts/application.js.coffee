@@ -65,6 +65,10 @@ $ ->
     $(@).parents('.closed').hide()
     return false
 
+  $(document).on 'touchstart', '.close', ->
+    $(@).parents('.closed').hide()
+    return false
+
   setTimeout ( ->
     $('.panel.subscribe.hidden').removeClass('hidden')
   ), 20000
