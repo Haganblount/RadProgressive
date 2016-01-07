@@ -44,7 +44,8 @@ class Card < ActiveRecord::Base
       charge = Stripe::Charge.create(
         amount: self.amount * 100,
         currency: 'usd',
-        source: self.stripe_token
+        source: self.stripe_token,
+        description: self.email
       )
 
       self.stripe_id = charge.id
