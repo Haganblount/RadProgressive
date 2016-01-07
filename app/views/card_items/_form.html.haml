@@ -5,36 +5,31 @@
                              html: { class: "card-item-form #{card_item.new_record? ? 'new' : 'edit'} #{(SHIRT_SIZES - @card_items.map(&:size)).empty? && card_item.new_record? ? 'hidden' : nil}" } do |f|
   .row
     .col-4
-    .col-12
+    .col-13
       .form-group 
         = f.check_box :is_black, class: card_item.new_record? ? "checkbox-new" : "checkbox-#{card_item.id}",
                                  checked: card_item.color.black?, disabled: card_item.persisted?
-    .col-1
-    .col-12
-      .form-group 
-        = f.check_box :is_man, class: card_item.new_record? ? "checkbox-new" : "checkbox-#{card_item.id}",
-                                 checked: card_item.sex.man?, disabled: card_item.persisted?
-    .col-1
-    .col-16
+    .col-2
+    .col-18
       
       = f.input :size, as: :select, 
                        collection: SHIRT_SIZES,
                        input_html: { class: "select-box-it" }, 
                        include_blank: false
                       
-    .col-1
-    .col-14
+    .col-2
+    .col-16
       = f.input :count, as: :select, 
                         collection: (1..10), 
                         input_html: { class: 'select-box-it' }, 
                         include_blank: false,
                         selected: card_item.count
-    .col-1
-    .col-23.price-col
+    .col-2
+    .col-26.price-col
       .price-label
         $
         %span.price= card_item.price
-    .col-1
+    .col-2
     .col-11.item-actions
       - if card_item.new_record?
         %button.btn.cart-add-btn{ type: :submit }

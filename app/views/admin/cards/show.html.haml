@@ -55,7 +55,6 @@
         %th Size
         %th Total price
         %th Color
-        %th Sex
       
     %tbody
       - @card.card_items.each do |card_item|
@@ -64,4 +63,3 @@
           %th= card_item.size
           %th $#{card_item.price}
           %th= card_item.color
-          %th= card_item.sex
