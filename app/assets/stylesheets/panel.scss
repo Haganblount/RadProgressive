@@ -4,8 +4,6 @@
   bottom: 0;
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  max-height: 520px;
-  overflow-y: auto;
 
   background-color: #eaeaea; 
   
@@ -40,7 +38,28 @@
   }
 }
 
+.order-list-panel {
+  position: fixed !important;
+  font-size: 16px;
+  font-family: liberator;
+  top: 10px !important;
+  left: -65% !important;
+  width: 300px !important;
+  height: 300px !important;
+
+  .row { padding: 5px; }
+  .row:last-child { margin-top: 5px; }
+}
+
+@media (min-width: 400px) {
+  .new_card .total-table {
+    display: none;
+  }
+}
+
 @media (max-width: 400px) {
+  .order-list-panel { display: none; }
+
   .card-items .panel {
     width: 98.5%;
     padding-left: 0;

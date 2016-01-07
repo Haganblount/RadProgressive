@@ -11,6 +11,7 @@
       $('body').addClass('cards')
       $('.panel.card-panel').html(panel)
       $('.panel.card-panel').css({ rotate: '0deg', x: '0' })
+      $('.order-list-wrapper').html("#{escape_javascript(render('cards/order_list'))}")
     });
   }
   
