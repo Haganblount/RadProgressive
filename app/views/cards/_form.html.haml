@@ -58,11 +58,17 @@
     .col-5
     .col-90.help-block.payment-errors
   
+  - @session.card_items.without_card.each do |card_item|
+    .row.prices
+      .col-10
+      .col-50 #{card_item.count}/#{card_item.size} #{card_item.color.black? ? 'Black on Black' : 'White on Grey' }
+      .col-30 $#{card_item.price}
+  .row.prices
   .row.prices
     .col-10
     .col-20
-    .col-25
     .col-30
+    .col-25
       Total: $#{@session.total_price}
 
   .row.form-actions
