@@ -56,3 +56,19 @@ p.done {
 
 .clear { clear: both; }
 .right { float: right; }
+
+img.made-in {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+@media (max-width: 400px) { 
+  img.made-in {
+    top: 10px;
+    width: 100px;
+    right: 10px;
+    left: inherit;
+    bottom: inherit;
+  }
+}
