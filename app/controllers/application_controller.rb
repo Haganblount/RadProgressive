@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
 
   private
   
+  def reset_session
+    @session.card_items.destroy_all if @session.present?
+  end
+
   def set_session
     @session = Session.find_by_session_id(session.id)
     @card_items = @session.try(:card_items).try(:without_card) || []

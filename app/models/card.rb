@@ -28,7 +28,7 @@ class Card < ActiveRecord::Base
                            length: { maximum: 5 },
                            postcode_format: { country_code: :us, message: "entered is not a valid postcode for US." }
 
-  before_create :charge
+  after_validation :charge
   after_validation :clean_card_fields
 
   def clean_card_fields
@@ -48,7 +48,7 @@ class Card < ActiveRecord::Base
       )
 
       self.stripe_id = charge.id
-    rescue Stripe::CardError => e
+    rescue Stripe::StripeError => e
       errors.add(:card_number, e.message)
     end
   end

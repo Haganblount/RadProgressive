@@ -6,6 +6,6 @@ class Session < ActiveRecord::SessionStore::Session
   end 
 
   def total_price
-    card_items.sum(:count) * SHIRT_PRICE
+    card_items.without_card.sum(:count) * SHIRT_PRICE
   end
 end 
