@@ -41,11 +41,18 @@ class Card < ActiveRecord::Base
   
   def charge
     begin
+      description = self.card_items.map { |card_item| "#{card_item.count}/#{card_item.size} #{card_item.color.black? ? 'Black on Black' : 'White on Grey' } - $#{card_item.price}" }.join(', ')
+      shipping_address = "#{self.shipping_first_name} #{self.shipping_last_name}, #{self.shipping_address_1}, #{self.shipping_address_2}, #{self.shipping_city}, #{self.shipping_state}, #{self.shipping_zip}" 
+      billing_address = "#{self.billing_first_name} #{self.billing_last_name}, #{self.billing_address_1}, #{self.billing_address_2}, #{self.billing_city}, #{self.billing_state}, #{self.billing_zip}" 
+
       charge = Stripe::Charge.create(
         amount: self.amount * 100,
         currency: 'usd',
         source: self.stripe_token,
-        description: self.email
+        description: description,
+        metadata: { email: self.email,
+                    shipping_address: shipping_address,
+                    billing_address: billing_address }
       )
 
       self.stripe_id = charge.id
