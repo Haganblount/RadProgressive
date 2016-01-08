@@ -13,6 +13,8 @@
     = javascript_include_tag 'google_analytics' if Rails.env.production?
     = stripe_javascript_tag
     = csrf_meta_tag
+    - if Rails.env.production?
+      %script{ src: "//load.sumome.com/",  "data-sumo-site-id" => "e29dc20239a3ff0486aa21fae65b9f6514e50398fb8e0b0d7bba06aa71f40e45", async: "async" }
   
   %body.front{ class: "#{yield(:body_classes)} #{controller_name}" }
     %img#backgrounds
