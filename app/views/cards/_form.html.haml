@@ -1,4 +1,4 @@
-= simple_form_for @card, wrapper: :clean_form, remote: true do |f|
+= simple_form_for @card, wrapper: :clean_form, remote: true, html: {autocomplete: 'off'} do |f|
   = f.input :stripe_token, as: :hidden
   %label Email address
   .row
