@@ -4,6 +4,11 @@ class CardsController < ApplicationController
   def new
     @card = Card.new
     gon.backgrounds = Background.backgrounds
+    
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js {  }
+    end
   end
 
   def create
@@ -23,6 +28,10 @@ class CardsController < ApplicationController
   end
 
   def done
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js {  }
+    end
   end
 
   private

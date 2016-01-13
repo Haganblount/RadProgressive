@@ -19,6 +19,9 @@
 @import "select_box_it_overide";
 @import "fancybox_override";
 @import "checkbox_override";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "awesome-bootstrap-checkbox/awesome-bootstrap-checkbox";
 @import "background";
 @import "panel";
 @import "cards";
@@ -31,6 +34,18 @@ a { color: black; }
 p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 p.done { 
   text-align: center;
+}
+
+.checkbox.session_subscribe {
+  margin-top: 0;
+  
+  label[for="session_subscribe"]::after {
+    font-size: 15px;
+  }
+
+  label[for="session_subscribe"]::before {
+    border-radius: 0;
+  }
 }
 
 .ladda-button { 

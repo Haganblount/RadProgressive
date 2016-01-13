@@ -1,0 +1,7 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "awesome-bootstrap-checkbox": "latest",
+    "components-font-awesome": "latest"
+  }
+}

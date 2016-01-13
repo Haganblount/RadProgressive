@@ -1,10 +1,10 @@
 .wrapper
   %h1 SHOW YOUR FUCKING SUPPORT WITH PRIDE
-  = render 'form', card_item: @card_item
+  = render 'card_items/form', card_item: @card_item
   #card-items
     - @card_items.each do |card_item|
-      = render 'form', card_item: card_item
-  = render 'actions'
+      = render 'card_items/form', card_item: card_item
+  = render 'card_items/actions'
   %p.note Shirts are Unisex American Apparel Tri-Blend. Please check the sizing chart before ordering.
   %p.note  
     Proceeds go to 

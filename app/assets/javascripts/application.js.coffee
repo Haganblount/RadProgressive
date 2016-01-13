@@ -69,11 +69,6 @@ $ ->
     $(@).parents('.closed').hide()
     return false
 
-  setTimeout ( ->
-    if $('.card-item-form.edit').length == 0 && $('.total-table .row.prices').length < 2
-      $('.panel.subscribe.hidden').removeClass('hidden')
-  ), 20000
-      
       
 
 

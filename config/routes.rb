@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  root 'card_items#new'
+  root 'sessions#new'
 
   get 'admin' => 'admin/cards#index'
 
@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   end
   
 
-  resources :card_items
+  resources :card_items, only: [:new, :create, :update, :destroy]
+  resources :sessions, only: [:new, :create]
   resource :subscribes
 
   namespace :admin do

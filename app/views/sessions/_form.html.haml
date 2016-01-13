@@ -1,0 +1,25 @@
+= simple_form_for @session, wrapper: :clean_form, remote: true, html: { autocomplete: 'off' } do |f|
+  .row
+    .col-5
+    .col-40
+      = f.input :email, input_html: { placeholder: 'Email Address' }
+    .col-8
+    .col-40
+      = f.input :email_confirmation, input_html: { placeholder: 'Confirm Email' }
+  .row.form-actions
+    .col-5
+    .col-46
+      .checkbox.session_subscribe
+        = check_box_tag 'session[subscribe]', @session.subscribe, @session.subscribe, id: 'session_subscribe'
+        %label{ for: 'session_subscribe' }
+          GET INFORMED ON NEW ITEMS AND PROGRESSIVE NEWS
+    .col-2
+    .col-46
+      %button.btn.btn-flag.ladda-button{ 'data-style' => 'expand-right', type: :submit }
+        Sign In
+  
+  :javascript 
+    if($(window).width() > 400) {
+      Ladda.bind('.ladda-button')
+    }
+

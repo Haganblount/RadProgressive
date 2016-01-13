@@ -1,0 +1,20 @@
+- if @session.new_record?
+  :plain
+    $('.card-panel form').replaceWith("#{escape_javascript(render('form'))}");
+- else
+  :plain 
+    var panel = "#{escape_javascript(render('card_items/new'))}"
+  
+    if($(window).width() < 400) {
+      $('body').removeClass()
+      $('body').addClass('card_items')
+      $('.panel.card-panel').html(panel)
+    } else {
+      $(".panel.card-panel").transition(window.transitionParams, function() {
+        $('body').removeClass()
+        $('body').addClass('card_items')
+        $('.panel.card-panel').html(panel)
+        $('.panel.card-panel').css({ rotate: '0deg', x: '0px' })
+        $('.order-list-wrapper').html('')
+      }); 
+    }

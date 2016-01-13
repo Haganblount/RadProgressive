@@ -1,9 +1,10 @@
-class Session < ActiveRecord::SessionStore::Session 
+class Session < ActiveRecord::Base
   has_many :card_items
   
-  def self.find_by_session_id(session_id) 
-    where(session_id: session_id).first
-  end 
+  attr_accessor :email_confirmation, :subscribe
+
+  validates :email, confirmation: true, presence: true,  email: true, length: { maximum: 254 }
+  validates :email_confirmation, presence: true, email: true
 
   def total_price
     card_items.without_card.sum(:count) * SHIRT_PRICE

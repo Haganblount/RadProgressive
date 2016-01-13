@@ -30,7 +30,6 @@ gem 'email_validator'
 gem 'credit_card_validations'
 gem 'jquery-ui-rails'
 gem 'fancybox-rails'
-gem 'activerecord-session_store'
 gem "ladda-rails"
 gem 'stripe-rails'
 gem 'airbrake'
@@ -39,6 +38,8 @@ gem 'enumerize'
 gem 'ransack'
 gem 'gibbon'
 gem 'heroku'
+gem "bower-rails", "~> 0.10.0"
+gem 'font-awesome-sass', '~> 4.5.0'
 
 group :production do
   gem 'fog', '~>1.20'
