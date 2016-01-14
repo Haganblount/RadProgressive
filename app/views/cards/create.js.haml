@@ -1,12 +1,9 @@
 - if @card.new_record?
   :plain
-    _gaq.push(['_trackEvent', 'Goals', 'payment-failure']);
-
     $('.card-panel form').replaceWith("#{escape_javascript(render('form'))}");
+    ga('send', 'event', 'payment-failure')
 - else
   :plain 
-    _gaq.push(['_trackEvent', 'Goals', 'payment-success']);
-
     var panel = "#{escape_javascript(render('done'))}"
     if($(window).width() < 400) {
       $('.panel.card-panel').html(panel);
@@ -17,4 +14,6 @@
         $('.order-list-wrapper').html('')
       });
     }
+
+    ga('send', 'event', 'payment-success')
     

@@ -20,7 +20,7 @@
   
   - if @session.email.present?
     :javascript 
-      _gaq.push(['_trackEvent', 'Goals', 'sign-in-failure']);
+      ga('send', 'event', 'sign-in-failure')
   
   :javascript 
     if($(window).width() > 400) {

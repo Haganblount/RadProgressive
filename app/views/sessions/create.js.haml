@@ -1,15 +1,13 @@
 - if @session.new_record?
   :plain
-    
     $('.card-panel form').replaceWith("#{escape_javascript(render('form'))}");
 - else
   - if @session.subscribe
     :plain 
-      _gaq.push(['_trackEvent', 'Goals', 'sign-in-and-subscribed']);
+      ga('send', 'event', 'sign-in-and-subscribed')
   - else
     :plain 
-      _gaq.push(['_trackEvent', 'Goals', 'just-sign-in']);
-  
+      ga('send', 'event', 'just-sign-in')
   :plain 
     var panel = "#{escape_javascript(render('card_items/new'))}"
   

@@ -4,7 +4,7 @@
 - if params[:send_goal]
   - if @session.subscribe
     :javascript 
-      _gaq.push(['_trackEvent', 'Goals', 'sign-in-and-subscribed']);
+      ga('send', 'event', 'sign-in-and-subscribed')
   - else
     :javascript 
-      _gaq.push(['_trackEvent', 'Goals', 'just-sign-in']);
+      ga('send', 'event', 'just-sign-in')
