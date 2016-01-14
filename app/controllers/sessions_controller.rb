@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   before_action :set_backgrounds
 
   def new
-    if @session.nil?
+    if session[:s_id].nil?
       @session = Session.new
       gon.backgrounds = Background.backgrounds
     else

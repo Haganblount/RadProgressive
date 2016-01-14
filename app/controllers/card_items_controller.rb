@@ -4,9 +4,6 @@ class CardItemsController < ApplicationController
 
   def new
     @card_item = CardItem.new
-    puts '------'
-    puts @session.id
-    puts '------'
   end
 
   def create
