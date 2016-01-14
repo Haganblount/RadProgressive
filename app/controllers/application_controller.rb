@@ -21,8 +21,7 @@ class ApplicationController < ActionController::Base
 
   def set_gon
     if @session.present?
-      gon.current_session_id = @session.id
-      gon.current_session_email = @session.email
+      gon.current_session_id = @session.email
     end
     
     gon.ga_id =  Rails.env.production? ? 'UA-71946977-1' : nil
