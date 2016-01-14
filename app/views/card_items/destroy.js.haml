@@ -1,4 +1,6 @@
 :plain
+  _gaq.push(['_trackEvent', 'Goals', 'remove-item-from-card']);
+  
   $("#edit_card_item_#{@card_item.id}").remove()
   $('form#new_card_item').replaceWith("#{escape_javascript(render('form', card_item: CardItem.new))}")
   $('.go-to-cart-btn').replaceWith("#{escape_javascript(render('go_to_cart_btn'))}")

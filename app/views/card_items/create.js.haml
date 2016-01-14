@@ -1,4 +1,6 @@
 :plain
+  _gaq.push(['_trackEvent', 'Goals', 'add-item-to-card']);
+
   $('#card-items').append("#{escape_javascript(render('form', card_item: @card_item))}");
   $('form#new_card_item').replaceWith("#{escape_javascript(render('form', card_item: CardItem.new))}")
   $('.select-box-it').selectBoxIt();

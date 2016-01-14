@@ -10,7 +10,7 @@
     = stylesheet_link_tag    'application', media: 'all'
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
     = javascript_include_tag 'application'
-    = javascript_include_tag 'google_analytics' if Rails.env.production?
+    = javascript_include_tag 'google_analytics'
     = stripe_javascript_tag
     = csrf_meta_tag
     - if Rails.env.production?

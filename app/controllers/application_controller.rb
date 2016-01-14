@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
       gon.current_session_email = @session.email
     end
     
-    gon.ga_id = 'UA-71946977-1'
+    gon.ga_id =  Rails.env.production? ? 'UA-71946977-1' : nil
   end
 
   def set_backgrounds
