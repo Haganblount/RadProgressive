@@ -1,7 +1,7 @@
 class Session < ActiveRecord::Base
   has_many :card_items
   
-  attr_accessor :email_confirmation, :subscribe
+  attr_accessor :email_confirmation
 
   validates :email, confirmation: true, presence: true,  email: true, length: { maximum: 254 }
   validates :email_confirmation, presence: true, email: true

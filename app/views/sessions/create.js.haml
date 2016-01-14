@@ -1,6 +1,6 @@
 - if @session.new_record?
   :plain
-    _gaq.push(['_trackEvent', 'Goals', 'sign-in-failure']);
+    
     $('.card-panel form').replaceWith("#{escape_javascript(render('form'))}");
 - else
   - if @session.subscribe

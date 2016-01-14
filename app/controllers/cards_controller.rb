@@ -2,7 +2,8 @@ class CardsController < ApplicationController
   before_action :set_backgrounds
 
   def new
-    @card = Card.new
+    @card = Card.new(email: @session.email, email_confirmation: @session.email)
+
     gon.backgrounds = Background.backgrounds
     
     respond_to do |format|

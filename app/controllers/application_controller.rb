@@ -11,8 +11,12 @@ class ApplicationController < ActionController::Base
   protected
   
   def set_session  
-    @session = Session.find(session[:session_id])
-    @card_items = @session.try(:card_items).try(:without_card) || []
+    if session[:s_id].nil?
+      redirect_to root_path
+    else
+      @session = Session.find(session[:s_id])
+      @card_items = @session.try(:card_items).try(:without_card) || []
+    end
   end
 
   def set_gon

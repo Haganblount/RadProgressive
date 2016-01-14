@@ -1,4 +1,4 @@
-= simple_form_for @session, wrapper: :clean_form, remote: true, html: { autocomplete: 'off' } do |f|
+= simple_form_for @session, wrapper: :clean_form, html: { autocomplete: 'off' } do |f|
   .row
     .col-5
     .col-40
@@ -17,6 +17,10 @@
     .col-46
       %button.btn.btn-flag.ladda-button{ 'data-style' => 'expand-right', type: :submit }
         Sign In
+  
+  - if @session.email.present?
+    :javascript 
+      _gaq.push(['_trackEvent', 'Goals', 'sign-in-failure']);
   
   :javascript 
     if($(window).width() > 400) {

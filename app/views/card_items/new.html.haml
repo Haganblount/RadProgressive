@@ -1,2 +1,10 @@
 .panel.card-panel
   = render 'card_items/new'
+
+- if params[:send_goal]
+  - if @session.subscribe
+    :javascript 
+      _gaq.push(['_trackEvent', 'Goals', 'sign-in-and-subscribed']);
+  - else
+    :javascript 
+      _gaq.push(['_trackEvent', 'Goals', 'just-sign-in']);

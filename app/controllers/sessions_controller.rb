@@ -4,26 +4,27 @@ class SessionsController < ApplicationController
   before_action :set_backgrounds
 
   def new
-    if session[:session_id]
-      redirect_to new_card_item_path
-    else
+    if @session.nil?
       @session = Session.new
       gon.backgrounds = Background.backgrounds
+    else
+      redirect_to new_card_item_path
     end
   end
 
   def create
-    
     @session = Session.new(session_params)
 
     if @session.save
-      session[:session_id] = @session.id
-      set_session
-      @card_item = CardItem.new
-
+      session[:s_id] = @session.id
+      
       if @session.subscribe
         Subscribe.where(email: @session.email).first_or_create
       end
+
+      redirect_to new_card_item_path(send_goal: true)
+    else
+      render 'new'
     end
   end
 
