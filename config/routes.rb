@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  root 'sessions#new'
+  root 'card_items#new'
 
   get 'admin' => 'admin/cards#index'
 

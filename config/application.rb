@@ -11,6 +11,12 @@ module Feelthefuckingbern
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
 
+    config.action_dispatch.session_store = :active_record_store  
+  
+    ActiveRecord::SessionStore::Session.table_name = 'sessions'
+    ActiveRecord::SessionStore::Session.primary_key = 'session_id'
+    ActiveRecord::SessionStore::Session.data_column_name = 'data'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -11,19 +11,16 @@ class ApplicationController < ActionController::Base
   protected
   
   def set_session  
-    if session[:s_id].nil?
-      redirect_to root_path
-    else
-      @session = Session.find(session[:s_id])
-      @card_items = @session.try(:card_items).try(:without_card) || []
-    end
+    @session = Session.find_by_session_id(session.id)
+    @card_items = @session.try(:card_items).try(:without_card) || []
   end
 
   def set_gon
     if @session.present?
-      gon.current_session_id = @session.email
+      gon.current_session_id = session.id
     end
     
+    gon.shirt_price = SHIRT_PRICE
     gon.ga_id =  Rails.env.production? ? 'UA-71946977-1' : nil
   end
 
