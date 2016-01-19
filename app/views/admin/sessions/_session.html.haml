@@ -1,0 +1,5 @@
+%tr
+  %td= session.email
+  %td= session.created_at.to_usa
+  %td
+    = link_to 'Delete', [:admin, session], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'

@@ -1,0 +1,14 @@
+%legend
+  %h2 
+    Sessions.
+%table.table.table-hover
+  %thead
+    %tr
+      %th Email
+      %th Created At
+      %th 
+
+  %tbody
+    = render @sessions
+
+= paginate @sessions

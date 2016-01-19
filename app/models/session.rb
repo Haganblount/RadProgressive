@@ -1,4 +1,6 @@
 class Session < ActiveRecord::Base
+  include Scopes
+  
   has_many :card_items
   
   attr_accessor :email_confirmation

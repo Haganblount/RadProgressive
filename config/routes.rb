@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resource :subscribes
 
   namespace :admin do
-    resources :users, :subscribes
+    resources :users, :subscribes, :sessions
     
     resources :cards, only: [:index, :show]
 

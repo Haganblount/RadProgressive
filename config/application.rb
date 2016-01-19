@@ -26,5 +26,12 @@ module Feelthefuckingbern
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.stripe.publishable_key = ENV['STRIPE_PUBLISHABLE_KEY']
+
+    config.to_prepare do
+      Devise::SessionsController.skip_before_filter :set_session
+      Devise::SessionsController.skip_before_filter :set_gon
+      Devise::RegistrationsController.skip_before_filter :set_session
+      Devise::RegistrationsController.skip_before_filter :set_gon
+    end
   end
 end
